@@ -25,12 +25,14 @@ h1 span {
   font-weight: bold;
 }
 
-span, a {
-  color: #FF9900;
+span,
+a {
+  color: #ff9900;
 }
 
-p, footer {
-  color: #7D7987;
+p,
+footer {
+  color: #7d7987;
 
   font-size: 14px;
   line-height: 28px;
@@ -46,7 +48,7 @@ footer #line {
 
   margin: 0 auto 8px;
 
-  border: 1px solid #ECEFF2;
+  border: 1px solid #eceff2;
 }
 
 #balls {
