@@ -1,0 +1,101 @@
+:root {
+  --azul-bg: #2f2e41;
+  --verde-span: #00bfa6;
+  --cinza-p: #c2c2c2;
+}
+
+body {
+  background-color: var(--azul-bg);
+
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+
+  margin: 0;
+  padding: 0;
+
+  min-height: 100vh;
+}
+
+.page {
+  width: 1100px;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 100px;
+}
+
+nav ul {
+  display: flex;
+  gap: 63px;
+
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.5;
+  font-weight: bold;
+
+  border-bottom: 1px solid var(--verde-span);
+}
+
+/* MAIN */
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.text {
+  text-align: center;
+}
+
+.text span {
+  color: var(--verde-span);
+  font-weight: bold;
+}
+
+.text h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.text p {
+  color: var(--cinza-p);
+  font-weight: lighter;
+  font-size: 14px;
+
+  margin-top: 59px;
+
+  line-height: 28px;
+}
+
+/* RODAPÉ */
+
+footer {
+  text-align: center;
+
+  margin: 150px 270px 0px;
+  padding-top: 27px;
+
+  border-top: 1px solid var(--verde-span);
+}
+
+#lock {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
