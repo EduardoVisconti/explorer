@@ -7,7 +7,7 @@
 body {
   font-family: 'Poppins', sans-serif;
 
-  background: #e5e5e5;
+  background-color: #e5e5e5;
 }
 
 body::before {
@@ -52,7 +52,7 @@ header p {
 
 form {
   margin-top: 38px;
-  background: #fafafc;
+  background-color: #fafafc;
   border-radius: 8px;
   min-height: 300px;
 
@@ -106,7 +106,7 @@ fieldset legend {
   font-size: 12px;
   line-height: 20px;
 
-  color: #a2a0a7;
+  color: #a9a7af;
 }
 
 .input-wrapper label span:hover {
@@ -187,7 +187,7 @@ fieldset legend {
 }
 
 .checkbox-wrapper input:checked + label::before {
-  background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='24' height='24' rx='8' fill='%23FAFAFC' stroke='%23E6E6F0'/%3E%3Cpath d='M10 17.17L5.83 13L4.41 14.41L10 20L22 8L20.59 6.59L10 17.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.00016 16.1698L4.83016 11.9998L3.41016 13.4098L9.00016 18.9998L21.0002 6.99984L19.5902 5.58984L9.00016 16.1698Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
 }
 
 .checkbox-wrapper input:focus + label::before {
