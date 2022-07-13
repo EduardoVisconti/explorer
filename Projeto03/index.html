@@ -56,8 +56,8 @@
               <label for="event-category">Categoria</label>
               <select id="event-category">
                 <option value="live">Ao vivo</option>
-                <option value="poadcast">Ao vivo</option>
-                <option value="mentorship">Ao vivo</option>
+                <option value="poadcast">Poadcast</option>
+                <option value="mentorship">Mentoria</option>
               </select>
             </div>
           </div>
@@ -66,6 +66,55 @@
         <fieldset>
           <div class="fieldset-wrapper">
             <legend>Privacidade</legend>
+
+            <div class="input-wrapper">
+              <label for="event-email"
+                >E-mail do administrador
+                <span>(Digite um e-mail válido)</span></label
+              >
+              <input type="email" id="event-email" />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="event-password"
+                >Senha de acesso para os participantes
+                <span>(mínimo 8 caracteres)</span></label
+              >
+              <input type="password" id="event-password" />
+            </div>
+
+            <div class="checkbox-wrapper">
+              <label for="event-private"
+                >Evento privado</label
+              >
+              <input type="checkbox" id="event-private" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="fieldset-wrapper">
+            <legend>Dia e hora</legend>
+
+            <div class="col-3">
+              <div class="input-wrapper">
+                <label for="event-data">Data</label>
+                <input type="date" id="event-date" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="event-begin"
+                  >Das</label
+                >
+                <input type="time" id="event-begin" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="event-end"
+                  >Até</label
+                >
+                <input type="time" id="event-end" />
+            </div>
           </div>
         </fieldset>
       </form>

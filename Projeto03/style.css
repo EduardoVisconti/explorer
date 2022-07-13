@@ -34,7 +34,7 @@ header {
 }
 
 header h1 {
-  font-family: 'Archivo', sans-serif;
+  font-family:  'Archivo', sans-serif;
   font-weight: bold;
   font-size: 36px;
   line-height: 42px;
@@ -90,7 +90,8 @@ fieldset legend {
   flex-direction: column;
 }
 
-.input-wrapper label {
+.input-wrapper label,
+.checkbox-wrapper label {
   font-size: 14px;
   line-height: 24px;
 
@@ -142,4 +143,53 @@ fieldset legend {
   background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: right 24px top 50%;
+}
+
+.col-3 {
+  display: flex;
+  gap: 20px;
+}
+
+.col-3 > div:nth-child(1) { /* Primeira child da div */
+  width: 100%;
+}
+
+.checkbox-wrapper {
+  position: relative;
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin: 0;
+}
+
+.checkbox-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+
+  opacity: 0;
+}
+
+.checkbox-wrapper label::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: block;
+
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+}
+
+.checkbox-wrapper input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='24' height='24' rx='8' fill='%23FAFAFC' stroke='%23E6E6F0'/%3E%3Cpath d='M10 17.17L5.83 13L4.41 14.41L10 20L22 8L20.59 6.59L10 17.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+}
+
+.checkbox-wrapper input:focus + label::before {
+  outline: 2px solid black;
 }
