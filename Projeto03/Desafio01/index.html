@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mentoria</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="page">
@@ -14,13 +15,24 @@
     <form id="my-form">
       <fieldset>
         <div class="fieldset-wrapper">
-          <legend>Informações do Evento</legend>
+          <legend>Informações Pessoais</legend>
 
           <div class="input-wrapper">
-            <label for="event-title"
-              >Título do evento <span>(mínimo 8 caracteres)</span></label
-            >
-            <input type="text" id="event-title" required minlength="8" />
+            <label for="schedule-name">Nome</label>
+            <input type="text" id="schedule-name" />
+            
+            <label for="schedule-lastname">Sobrenome</label>
+            <input type="text" id="schedule-lastname" />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="schedule-email">Email <span>(digite um email válido)</span></label>
+            <input type="email" id="schedule-email" />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="schedule-senha">Senha <span>(mínimo de 6 caracteres)</span></label>
+            <input type="password" id="schedule-senha" />
           </div>
       </fieldset>
     </form>

@@ -1,0 +1,17 @@
+:root {
+  --dark-grey: #535971;
+  --btn-bg: #ff5374;
+  --form-bg: #efefef;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  color: #ffffff;
+
+  background-color: var(--dark-grey);
+}
