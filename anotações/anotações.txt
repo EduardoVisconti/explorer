@@ -1,1 +1,4 @@
-qual o meu propósito
+Dentro de um input do tipo text, o name define o valor e o id é o identificador para utilizarmos no html, css e js.
+
+O método GET cria uma seqüência de consulta(query string) e a acrescenta à URL do script no servidor que manipula a solicitação.
+O método POST cria um par nome/valor que são passados no corpo da mensagem de pedido HTTP.
