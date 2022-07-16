@@ -10,8 +10,103 @@
   box-sizing: border-box;
 }
 
-header {
-  color: #ffffff;
+body {
+  font-family: 'Poppins', sans-serif;
 
-  background-color: var(--dark-grey);
+  background-color: #e5e5e5;
+}
+
+body::before {
+  content: '';
+  width: 100%;
+  height: 436px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Passando pra parte de tras */
+  background: var(--dark-grey);
+}
+
+.page {
+  width: 750px;
+  margin: auto;
+}
+
+header {
+  width: 417px;
+  margin-top: 120px;
+}
+
+header h1 {
+  color: #ffffff;
+  font-family: 'Staatliches', sans-serif;
+  font-size: 48px;
+}
+
+header p {
+  color: #ffffff;
+  font-size: 20px;
+
+  width: 417px;
+
+  margin: 18px 0;
+}
+
+form {
+  background-color: var(--form-bg);
+
+  border-radius: 8px;
+
+  margin-top: 58px;
+  padding: 64px;
+
+  display: flex;
+  flex-direction: column;
+  /*gap: 56px;*/
+}
+
+fieldset {
+  border: none;
+}
+
+.fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+fieldset legend {
+  color: var(--dark-grey);
+  font-family: 'Staatliches', sans-serif;
+  font-size: 24px;
+
+  /*width: 100%;*/
+  border-bottom: 1px solid #e6e6f0;
+  padding-bottom: 16px;
+}
+
+/*.input wrapper {
+  display: flex;
+  flex-direction: column;
+}*/
+
+.input-wrapper label {
+  color: #4e4958;
+  font-family: 'Poppins';
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.input-wrapper label span {
+  color: #c1bccc;
+  font-size: 12px;
+}
+
+.input-wrapper label span:hover {
+  color: #978bb0;
+}
+
+.input-wrapper input {
+  background-color: #e6e6f0;
 }
