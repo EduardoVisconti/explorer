@@ -63,7 +63,6 @@ form {
 
   display: flex;
   flex-direction: column;
-  /*gap: 56px;*/
 }
 
 fieldset {
@@ -81,15 +80,21 @@ fieldset legend {
   font-family: 'Staatliches', sans-serif;
   font-size: 24px;
 
-  /*width: 100%;*/
+  width: 100%;
   border-bottom: 1px solid #e6e6f0;
   padding-bottom: 16px;
 }
 
-/*.input wrapper {
+fieldset .col-2 {
+  display: flex;
+  
+  gap: 22px;
+}
+
+.input-wrapper { /* Descendo o input */
   display: flex;
   flex-direction: column;
-}*/
+}
 
 .input-wrapper label {
   color: #4e4958;
@@ -109,4 +114,6 @@ fieldset legend {
 
 .input-wrapper input {
   background-color: #e6e6f0;
+
+  height: 56px;
 }
