@@ -46,7 +46,7 @@
               <label for="schedule-password"
               >Senha <span>(mínimo de 6 caracteres)</span></label>
 
-              <input type="password" id="schedule-password" minlength="6" />
+              <input type="current-password" id="schedule-password" minlength="6" />
             </div>
           </div>
         </fieldset>
@@ -66,11 +66,11 @@
           <div class="fieldset-wrapper">
             <legend>Seus horários disponíveis</legend>
 
-            <legend class="sub-legend">Primeira mentoria</legend>
+            <div class="sub-legend">Primeira mentoria</div>
             <div class="first-mentorship">
 
               <div class="input-wrapper">
-                <label for="appoinment-date">Data</label>
+                <label for="appoinment-date">Data <span>(DD/MM/AAAA)</span></label>
                 <input type="date" id="appoinment-date">
               </div>
 
@@ -85,11 +85,11 @@
               </div>
             </div>
 
-              <legend class="sub-legend">Segunda mentoria</legend>
+              <div class="sub-legend">Segunda mentoria</div>
               <div class="second-mentorship">
   
                 <div class="input-wrapper">
-                  <label for="appoinment2-date">Data</label>
+                  <label for="appoinment2-date">Data <span>(DD/MM/AAAA)</span></label>
                   <input type="date" id="appoinment2-date">
                 </div>
   
@@ -108,7 +108,7 @@
       </form>
 
       <footer>
-        <button>Salvar</button>
+        <input class="button" type="submit" form="my-form" value="Salvar" />
       </footer>
     </div>
   </body>

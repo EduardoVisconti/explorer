@@ -63,30 +63,32 @@ form {
   border-radius: 8px;
 
   margin-top: 56px;
+  padding: 64px;
   
   display: flex;
   flex-direction: column;
+  gap: 40px;
 }
 
 fieldset {
   border: none;
+  
 }
 
-.fieldset-wrapper, 
-.lastfieldset-wrapper {
+.fieldset-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 56px;
-
-  padding: 64px;
 }
 
-fieldset legend {
+fieldset legend,
+.sub-legend {
   color: var(--dark-grey);
   font-family: 'Staatliches', sans-serif;
   font-size: 24px;
 
   border-bottom: 1px solid #e6e6f0;
+
+  margin-bottom: 40px;
 
   width: 100%;
 }
@@ -96,13 +98,16 @@ fieldset .col-2 {
   gap: 22px;
 }
 
+.col-2 > div:nth-child(1),
+.col-2 > div:nth-child(2) {
+  width: 100%;
+}
+
 /* ---------- INPUT */
 
 .input-wrapper { /* Descendo o input */
   display: flex;
   flex-direction: column;
-
-  /*width: 100%; /* Para os inputs (nome, sobnome) tomar o espaço todo */
 }
 
 .input-wrapper label {
@@ -110,6 +115,8 @@ fieldset .col-2 {
   font-family: 'Poppins';
   font-size: 14px;
   line-height: 24px;
+
+  margin: 16px 0 8px 0;
 }
 
 .input-wrapper label span {
@@ -124,27 +131,21 @@ fieldset .col-2 {
 .input-wrapper input {
   font-size: 16px;
   
-  border: 1px solid /*#E6E6F0*/;
+  border: 1px solid rgba(0, 0, 0, 0.163);
   border-radius: 8px;
   
   background-color: #E6E6F0;
 
   height: 56px;
-
-  margin-top: 8px;
+  
   padding: 0 10px;
-}
-
-.input#schedule-name {
-  background-color: black;
 }
 
 /* ---------- DATE & TIME */
 
-
-
 .sub-legend {
   font-size: 20px;
+  margin: 16px 0 0;
 }
 
 .first-mentorship,
@@ -172,7 +173,7 @@ footer {
   border-radius: 0 0 20px 20px;
 }
 
-button {
+footer .button {
   background-color: #FF5374;
   
   border: none;
@@ -184,4 +185,16 @@ button {
 
   width: 600px;
   height: 55px;
+}
+
+footer .button:hover {
+  cursor: pointer;
+
+  background-color: #c51b3db6;
+}
+
+/* ERROS / INVALIDS */
+
+input:invalid {
+  border: 1px solid #FF1010;
 }
