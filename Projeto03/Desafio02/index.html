@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mentoria</title>
+    <title>Avalie a sua mentoria</title>
     <link rel="stylesheet" href="./style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap"
@@ -54,8 +54,8 @@
       </header>
 
       <form id="my-form">
+        <h1>Informações Pessoais</h1>
         <fieldset>
-          <h1>Informações Pessoais</h1>
           
           <div class="fieldset-wrapper">
             <div class="col-2">
@@ -92,9 +92,51 @@
                 <option value="julio">Julio</option>
               </select>
             </div>
+
+            <div class="input-wrapper">
+              <label for="mentor-feedback">Feedback sobre o mentor</label>
+
+              <textarea
+                name="mentor-feedback"
+                id="mentor-feedback"
+                cols="30"
+                rows="10"
+              ></textarea>
+
+              <p>
+                Todas as minhas dúvidas foram esclarecidas durante a mentoria.
+              </p>
+            </div>
           </div>
         </fieldset>
+
+        <fieldset>
+          <div class="fieldset-wrapper">
+            <legend>Agendando Próxima Mentoria</legend>
+
+            <div class="col-3">
+              <div class="input-wrapper">
+                <label for="appointment-date">Data</label>
+                <input type="date" id="appointment-date" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="appointment-begin">Das</label>
+                <input type="time" id="appointment-begin" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="appointment-end">Até</label>
+                <input type="time" id="appointment-end" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <footer>
+        <button type="submit" form="my-form">Salvar</button>
+        </footer>
       </form>
+      
     </div>
   </body>
 </html>

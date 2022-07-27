@@ -58,7 +58,7 @@ header h1 {
 header p {
   font-family: 'Poppins';
   font-size: 16px;
-  
+
   padding-bottom: 20px;
 }
 
@@ -76,12 +76,9 @@ fieldset {
   border: none;
 }
 
-.fieldset-wrapper {
-  padding: 32px 64px;
-}
-
-fieldset h1,
+form h1,
 legend {
+  color: #253b51;
   font-family: 'Staatliches', sans-serif;
   font-weight: 400;
   font-size: 24px;
@@ -89,9 +86,9 @@ legend {
   text-align: center;
 }
 
-fieldset h1 {
+form h1 {
   color: var(--white);
-  
+
   background-color: var(--orange);
 
   width: 750px;
@@ -101,7 +98,8 @@ fieldset h1 {
   padding: 50px;
 }
 
-fieldset .col-2 {
+fieldset .col-2,
+.col-3 { /* DATE & TIME */
   display: flex;
   gap: 22px;
 }
@@ -111,24 +109,81 @@ fieldset .col-2 {
 .input-wrapper {
   display: flex;
   flex-direction: column;
+}
 
+.col-2 > div:nth-child(1),
+.col-2 > div:nth-child(2),
+.col-3 > div:nth-child(1) {
   width: 100%;
 }
 
 label {
-  color: #4E4958;
+  color: #4e4958;
   font-weight: 400;
   font-size: 14px;
 
   margin-bottom: 8px;
 }
 
-input {
+label span {
+  font-weight: 400;
+  font-size: 12px;
+
+  color: #c1bccc;
+}
+
+input,
+select,
+textarea {
+  font-size: 16px;
+
   height: 55px;
 
   margin-bottom: 15px;
   padding: 8px;
 
-  border: 1px solid black;
+  border: 1px solid #bfbfc7;
   border-radius: 8px;
+}
+
+/* SELECT & TEXTAREA & PARAGRAPH */
+
+select {
+  width: 300px;
+
+  margin-bottom: 32px;
+}
+
+textarea {
+  height: 166px;
+}
+
+.input-wrapper p {
+  color: #4E4958;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+
+  margin-top: 30px;
+}
+
+/* DATE & TIME */
+
+.col-3 > div:nth-child(1) {
+  width: 100%;
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--orange);
+
+  margin: 64px;
+
+  width: 620px;
+  height: 50px;
 }
