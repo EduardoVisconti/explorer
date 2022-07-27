@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Mentoria</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="page">
@@ -46,10 +52,46 @@
           />
         </svg>
       </header>
+
       <form id="my-form">
         <fieldset>
+          <h1>Informações Pessoais</h1>
+          
           <div class="fieldset-wrapper">
-            
+            <div class="col-2">
+              <div class="input-wrapper">
+                <label for="name-info">Nome</label>
+                <input type="text" id="name-info" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="lastname-info">Sobrenome</label>
+                <input type="text" id="lastname-info" />
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="email-info"
+                >Email <span>(digite um email válido)</span></label
+              >
+              <input type="email" id="email-info" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="fieldset-wrapper">
+            <legend>Informações do Mentor</legend>
+
+            <div class="input-wrapper">
+              <label for="mentor-name">Selecione quem foi o seu mentor</label>
+
+              <select name="mentor-name" id="mentor-name">
+                <option value="rafael">Rafael</option>
+                <option value="bruno">Bruno</option>
+                <option value="julio">Julio</option>
+              </select>
+            </div>
           </div>
         </fieldset>
       </form>

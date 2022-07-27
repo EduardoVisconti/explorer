@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #293241;
+  --liblue-bg: #bfd7e4;
+  --orange: #f67669;
+  --white: #ffffff;
+}
+
+/* BODY & PAGE */
+
+body {
+  background-color: var(--liblue-bg);
+
+  font-family: 'Poppins', sans-serif;
+}
+
+body::before {
+  content: '';
+  width: 100%;
+  height: 465px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--dark-blue);
+}
+
+.page {
+  width: 750px;
+  margin: auto;
+}
+
+/* HEADER */
+
+header {
+  color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 110px;
+}
+
+header h1 {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+header p {
+  font-family: 'Poppins';
+  font-size: 16px;
+  
+  padding-bottom: 20px;
+}
+
+/* FORM & FIELDSET - LEGEND/H1 */
+
+form {
+  background-color: var(--white);
+
+  border-radius: 8px;
+
+  margin-top: 32px;
+}
+
+fieldset {
+  border: none;
+}
+
+.fieldset-wrapper {
+  padding: 32px 64px;
+}
+
+fieldset h1,
+legend {
+  font-family: 'Staatliches', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+}
+
+fieldset h1 {
+  color: var(--white);
+  
+  background-color: var(--orange);
+
+  width: 750px;
+  height: 133px;
+
+  border-radius: 8px 8px 0 0;
+  padding: 50px;
+}
+
+fieldset .col-2 {
+  display: flex;
+  gap: 22px;
+}
+
+/* INPUT & LABEL */
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+label {
+  color: #4E4958;
+  font-weight: 400;
+  font-size: 14px;
+
+  margin-bottom: 8px;
+}
+
+input {
+  height: 55px;
+
+  margin-bottom: 15px;
+  padding: 8px;
+
+  border: 1px solid black;
+  border-radius: 8px;
+}
