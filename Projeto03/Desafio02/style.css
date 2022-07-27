@@ -67,13 +67,17 @@ header p {
 form {
   background-color: var(--white);
 
-  border-radius: 8px;
+  border-radius: 20px;
 
   margin-top: 32px;
 }
 
 fieldset {
   border: none;
+}
+
+.fieldset-wrapper {
+  padding: 32px 64px 0 64px;
 }
 
 form h1,
@@ -104,7 +108,11 @@ fieldset .col-2,
   gap: 22px;
 }
 
-/* INPUT & LABEL */
+/* LEGEND & INPUT & LABEL */
+
+legend {
+  margin-bottom: 40px;
+}
 
 .input-wrapper {
   display: flex;
@@ -180,10 +188,19 @@ footer {
   justify-content: center;
   align-items: center;
 
+  padding: 64px;
+}
+
+footer button {
+  color: var(--white);
+  font-family: 'Staatliches',sans-serif;
+  font-size: 20px;
+
   background-color: var(--orange);
-
-  margin: 64px;
-
+  
   width: 620px;
   height: 50px;
+  
+  border: none;
+  border-radius: 8px;
 }
