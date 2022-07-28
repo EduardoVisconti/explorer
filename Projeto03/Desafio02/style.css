@@ -103,7 +103,8 @@ form h1 {
 }
 
 fieldset .col-2,
-.col-3 { /* DATE & TIME */
+.col-3 {
+  /* DATE & TIME */
   display: flex;
   gap: 22px;
 }
@@ -111,7 +112,9 @@ fieldset .col-2,
 /* LEGEND & INPUT & LABEL */
 
 legend {
-  margin-bottom: 40px;
+  border-bottom: 1px solid #E6E6F0;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .input-wrapper {
@@ -140,6 +143,10 @@ label span {
   color: #c1bccc;
 }
 
+label span:hover {
+  color: #69666e;
+}
+
 input,
 select,
 textarea {
@@ -154,7 +161,7 @@ textarea {
   border-radius: 8px;
 }
 
-/* SELECT & TEXTAREA & PARAGRAPH */
+/* SELECT & TEXTAREA & CHECKBOX */
 
 select {
   width: 300px;
@@ -166,13 +173,20 @@ textarea {
   height: 166px;
 }
 
-.input-wrapper p {
-  color: #4E4958;
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #4e4958;
   font-size: 14px;
   font-weight: 400;
-  text-align: center;
 
   margin-top: 30px;
+}
+
+.checkbox-wrapper label,
+.checkbox-wrapper input {margin: 0;
 }
 
 /* DATE & TIME */
@@ -193,14 +207,26 @@ footer {
 
 footer button {
   color: var(--white);
-  font-family: 'Staatliches',sans-serif;
+  font-family: 'Staatliches', sans-serif;
   font-size: 20px;
 
   background-color: var(--orange);
-  
+
   width: 620px;
   height: 50px;
-  
+
   border: none;
   border-radius: 8px;
+}
+
+footer button:hover {
+  cursor: pointer;
+
+  background-color: #c05f54;
+}
+
+/* ERROS & INVALIDS */
+
+input:invalid {
+  border: 1px solid var(--orange);
 }
