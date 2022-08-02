@@ -17,9 +17,14 @@ body {
   padding: 6rem 2.3rem 6.6rem;
 }
 
+main {
+  max-width: 33rem;
+  margin: 0 auto;
+}
+
 main p:first-child {
   color: #7158ef;
-  letter-spacing: 0.3rem;
+  letter-spacing: 3px;
   text-transform: uppercase;
   line-height: 3.2rem;
 
@@ -61,20 +66,54 @@ ul {
   margin-top: 7.2rem;
 }
 
+ul li {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+
+  max-width: 25.7rem;
+
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+ul li + li {
+  margin-top: 3.2rem;
+}
+
 ul li span {
   font-weight: 800;
   font-size: 7.2rem;
   line-height: 8rem;
 
-  letter-spacing: -0.2rem;
+  letter-spacing: -2px;
+
+  min-width: 4.5rem;
 }
 
-ul li {
-font-weight: 700;
-font-size: 2.4rem;
-line-height: 3.2rem;
+/* TABLET */
 
-display: flex;
-align-items: center;
-gap: 2.5rem;
+@media (min-width: 768px) {
+  
+  body {
+    padding: 8rem;
+  }
+
+  main {
+    max-width: 1020px;
+    display: flex;
+    gap: 10rem;
+  }
+
+  main > div {
+    max-width: 484px;
+  }
+  
+  ul li {
+    align-items: center;
+    gap: 5.3rem;
+
+    max-width: 450px;
+  }
 }
