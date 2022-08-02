@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-heading : 'Epilogue', sans-serif;
+  --ff-texting: 'Open sans', sans-serif;
+
+  --hue: 250;
+  --bg-primary: hsl(var(--hue), 22%, 20%);
+  --fc-primary: hsl(var(--hue), 0%, 100%);
+  --fc-secondary: hsl(var(--hue), 50%, 80%);
+  --fc-secondary-dark: hsl(var(--hue), 100%, 11%);
+
+  font-size: 62.5%;
+  --fs-body: 1.6rem;
+  --fs-heading: clamp(4rem, 1rem + 5vw, 5.6rem);
+  --fs-heading-sm: clamp(3rem, 0.5rem + 4vw, 4rem);
+}
+
+body {
+  font-family: var(--ff-texting);
+  font-size: var(--fs-body);
+
+  background-color: var(--bg-primary);
+  color: var(--fc-primary);
+}
+
+.page {
+  max-width: clamp(33rem, 20rem + 20vw, 117rem);
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+img {
+  width: 100%;
+}
+
+@media (min-width: 700px) {
+  .page {
+  max-width: 117rem;
+  padding: 0 5rem;
+  }
+  
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 930px) {
+  main {
+    grid-template-areas: "A B B"
+    "C C D";  
+  }
+
+  main div:nth-child(1) {
+    grid-area: A;
+  }
+
+  main div:nth-child(2) {
+    grid-area: B;
+  }
+
+  main div:nth-child(3) {
+    grid-area: C;
+  }
+
+  main div:nth-child(4) {
+    grid-area: D;
+  }
+}
+
+header {
+  font-family: var(--ff-heading);
+
+  text-align: center;
+
+  margin: 10rem 0 8rem;
+
+  /* animation - são 8 tipos */
+
+  animation: topdown 700ms;
+  /* animation-duration: 700ms;
+  animation-fill-mode: forwards; //Como terminar a animação
+  animation-direction: reverse; //Pra fazer o reverso
+  animation-delay: 200ms; //Tempo para começar a animação
+  animation-timing-function: ease; //
+  animation-iteration-count: infinite; //Quantidade de vezes
+  animation-play-state: paused; //Estado da animação */
+}
+
+header p {
+  color: var(--fc-secondary);
+  text-transform: uppercase;
+
+  line-height: 3.2rem;
+  letter-spacing: 3px;
+
+  font-weight: 400;
+
+  margin-bottom: 1.7rem;
+}
+
+header h1 {
+  font-weight: 800;
+  font-size: var(--fs-heading);
+  line-height: 4.8rem;
+}
+
+main {
+  display: grid;
+  gap: 3.2rem;
+
+  /* animation */
+
+  animation: downtop 700ms 350ms backwards;
+  /* Sempre que usamos o delay temos que usar o backwards ou fowards */
+}
+
+/* CARD */
+
+.card {
+  font-family: var(--ff-heading);
+  position: relative; /* Para o absolute abaixo ser relativo ao cartão */
+}
+
+.card img {
+  height: 41.6rem;
+  object-fit: cover; /* Pra se encaixar no tamanho que estamos sugerindo acima */
+
+  border-radius: 6px;
+
+  transition: all 200ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+
+.card h2 {
+  position: absolute;
+  bottom: 5.2rem;
+  left: 2.8rem;
+
+  font-size: var(--fs-heading-sm);
+  font-weight: 800;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+}
+
+.card h2 span {
+  border-radius: 2rem;
+  background: var(--fc-primary);
+
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: var(--fc-secondary-dark);
+
+  padding: 0 1.6rem;
+
+  width: fit-content; /* Fazer a berda caber certinho junto com o texto */
+  height: 3.8rem;
+
+  display: inline-flex;
+  align-items: center;
+}
+
+/* KEYFRAMES / ANIMATION */
+
+@keyframes topdown { /* Pontos chaves dentro da animação */
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
