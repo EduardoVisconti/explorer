@@ -5,7 +5,7 @@
 }
 
 :root {
-  --ff-heading : 'Epilogue', sans-serif;
+  --ff-heading: 'Epilogue', sans-serif;
   --ff-texting: 'Open sans', sans-serif;
 
   --hue: 250;
@@ -40,10 +40,10 @@ img {
 
 @media (min-width: 700px) {
   .page {
-  max-width: 117rem;
-  padding: 0 5rem;
+    max-width: 117rem;
+    padding: 0 5rem;
   }
-  
+
   main {
     grid-template-columns: 1fr 1fr;
   }
@@ -51,8 +51,9 @@ img {
 
 @media (min-width: 930px) {
   main {
-    grid-template-areas: "A B B"
-    "C C D";  
+    grid-template-areas:
+      'A B B'
+      'C C D';
   }
 
   main div:nth-child(1) {
@@ -172,7 +173,8 @@ main {
 
 /* KEYFRAMES / ANIMATION */
 
-@keyframes topdown { /* Pontos chaves dentro da animação */
+@keyframes topdown {
+  /* Pontos chaves dentro da animação */
   0% {
     opacity: 0;
     transform: translateY(-15px);
