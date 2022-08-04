@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --fs-heading: 'Staatliches', sans-serif;
+  --fs-body: 'Palanquin', sans-serif;
+
+  --bg-header: hsl(218, 17%, 62%);
+  --bg-heading: hsl(275, 18%, 79%);
+}
+
+header {
+  background-color: var(--bg-header);
+
+  height: 27.9rem;
+}
+
+header h1 {
+  color: white;
+  background-color: var(--bg-heading);
+  
+  margin: 3.2rem 0 2.9rem;
+}
