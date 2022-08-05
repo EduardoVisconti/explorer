@@ -13,7 +13,8 @@
   --bg-header: hsl(218, 17%, 62%);
   --bg-heading: hsl(275, 18%, 79%);
 
-  --fs-body: 1.4rem;
+  --fs-body: clamp(1.6rem, 0.5rem + 3vw, 2rem);
+  --fs-span: 2rem;
 
   --fc-body: #23053a;
 }
@@ -56,7 +57,7 @@ header h1 {
 
   margin: 1.5rem auto 6rem;
 
-  max-width: 32rem;
+  max-width: clamp(31rem, 25rem + 20vw, 117rem);
 }
 
 main p {
@@ -64,7 +65,7 @@ main p {
   font-family: var(--ff-body);
   font-size: var(--fs-body);
 
-  line-height: 1.5rem;
+  line-height: 2rem;
   text-align: center;
 
   margin-bottom: 3rem;
@@ -95,7 +96,7 @@ img { /*obs*/
 
 .card span {
   color: #4a4e69;
-  font-size: 2rem;
+  font-size: var(--fs-span);
   letter-spacing: 0.05em;
 
   background-color: #feeafa;
