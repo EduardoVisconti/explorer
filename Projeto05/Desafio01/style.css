@@ -142,14 +142,3 @@ img { /*obs*/
     transform: translateY(0);
   }
 }
-
-/*@media (min-width: 900px) {
-  .wrapper {
-    max-width: 117rem;
-    padding: 0 5rem;
-  }
-
-  .wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-}*/
