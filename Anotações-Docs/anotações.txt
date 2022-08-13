@@ -20,5 +20,20 @@ let name = 'Mayk Brito'
 let name = `Mayk ${ 1 + 1 }` // aqui o resultado é Mayk 2
 
 /////////////////////////
+SCOPE / Escopo - determina a visibilidade de alguma variavel no JS
 
+No JavaScript, let e const só valem para o scope onde foi criado. var não.
 
+##var
+var é global e poderá funcionar fora de um escopo de um block
+
+##let
+let y = 1;
+{ 
+	y = 0
+	console.log('bla', y)
+}
+
+console.log('bla', y) 
+
+^^ Nesse caso funcionaria pois estariamos "atualizando" o 'y'. Quando apenas usamos o y, ele busca onde o y está independente da onde.
