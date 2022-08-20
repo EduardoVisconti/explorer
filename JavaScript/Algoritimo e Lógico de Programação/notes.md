@@ -93,3 +93,5 @@ Qual é a saída, ou quais os dados de saída, esperada? (outputs)
 [] arrays e funções de arrays
 [] condicional switch e if/else
 [] template literals (strings)
+
+[] Funções (named), funções anônimas e arrow functions

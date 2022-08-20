@@ -33,11 +33,11 @@ const patients = [
 
 let patientsNames = []
 
-for(let patient of patients) { //
-  patientsNames.push(patient.name)
+for (let patient of patients) { //patient pega os objetos pra nós
+  patientsNames.push(patient.name) //adicionando no Array
 }
 
-alert (patientsNames)
+alert (patientsNames) //printa o array com os nomes dos pacientes
 
 
 /*let patientsNames = []
