@@ -10,7 +10,7 @@ alert('A subtração dos dois números é: ' + sub)
 let multi = n1 * n2
 alert('A multiplicação dos dois números é: ' + multi)
 
-let div = Math.ceil(n1 / n2)
+let div = Math.round(n1 / n2)
 alert('A divisão dos dois números é: ' + div)
 
 let rest = n1 % n2
