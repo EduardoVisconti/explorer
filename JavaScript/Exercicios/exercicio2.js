@@ -37,24 +37,29 @@ const students = [
   }
 ]
 
+for (let student of students) {
+  if ()
+  alert(gradeResult)
+}
+
 function gradeCalculator(firstFinal, secondFinal) {
   return (firstFinal + secondFinal) / 2
 }
 
-// if (gradeCalculator >= 7){
-//   alert(`A média do(a) aluno(a) ${students.name} é de: ${gradeCalculator(students.firstFinal, students.secondFinal)} \n Parabéns, ${students.name}! Você foi aprovado(a) no concurso!`)
-// } else {
-//   alert(`${students.name} ce num passo menino`)
+
+// function gradeCalculator(firstFinal, secondFinal) {
+//   return (firstFinal + secondFinal) / 2
 // }
 
-function printGrades(students) {
-  return `A média do(a) aluno(a) ${students.name} é de: ${gradeCalculator(
-    students.firstFinal,
-    students.secondFinal
-  )} \n Parabéns, ${students.name}! Você foi aprovado(a) no concurso!`
-}
 
-for (let student of students) {
-  let gradeResult = printGrades(student)
-  alert(gradeResult)
-}
+// function printGrades(students) {
+//   return `A média do(a) aluno(a) ${students.name} é de: ${gradeCalculator(
+//     students.firstFinal,
+//     students.secondFinal
+//   )} \n Parabéns, ${students.name}! Você foi aprovado(a) no concurso!`
+// }
+
+// for (let student of students) {
+//   let gradeResult = printGrades(student)
+//   alert(gradeResult)
+// }

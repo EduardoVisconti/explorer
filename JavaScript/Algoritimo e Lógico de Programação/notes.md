@@ -29,7 +29,8 @@ O que estou aprendendo
 # Fluxos da aplicação
 Caminhos lógicos baseado em algum dado ou informação
 
-# Boas práticas na programação
+# 
+Boas práticas na programação
 Não repetir código
 
 [] Tipo de dado: Boolean (true | false)
