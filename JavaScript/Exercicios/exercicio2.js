@@ -33,33 +33,36 @@ const students = [
   {
     name: 'Gabriel',
     firstFinal: 6,
-    secondFinal: 2
+    secondFinal: 5
+  },
+  {
+    name: 'Luiz',
+    firstFinal: 5,
+    secondFinal: 7
+  },
+  {
+    name: 'Noah',
+    firstFinal: 8,
+    secondFinal: 9
   }
 ]
-
-for (let student of students) {
-  if ()
-  alert(gradeResult)
-}
 
 function gradeCalculator(firstFinal, secondFinal) {
   return (firstFinal + secondFinal) / 2
 }
 
 
-// function gradeCalculator(firstFinal, secondFinal) {
-//   return (firstFinal + secondFinal) / 2
-// }
+function printGrades(student) {
+  const averageGrade = gradeCalculator(student.firstFinal, student.secondFinal)
 
+  if (averageGrade >= 7) {
+    return `A média de ${student.name} é de: ${gradeCalculator(student.firstFinal, student.secondFinal)} \n Parabéns, ${student.name}! Você foi aprovado(a) no concurso!`
+  } else {
+    return `A média de ${student.name} é de: ${gradeCalculator(student.firstFinal, student.secondFinal)} \n Você foi reprovado(a) no concurso!`
+  }
+}
 
-// function printGrades(students) {
-//   return `A média do(a) aluno(a) ${students.name} é de: ${gradeCalculator(
-//     students.firstFinal,
-//     students.secondFinal
-//   )} \n Parabéns, ${students.name}! Você foi aprovado(a) no concurso!`
-// }
-
-// for (let student of students) {
-//   let gradeResult = printGrades(student)
-//   alert(gradeResult)
-// }
+for (let student of students) {
+  let gradeResult = printGrades(student)
+  alert(gradeResult)
+}
