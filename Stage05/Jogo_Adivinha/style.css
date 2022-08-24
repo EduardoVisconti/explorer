@@ -12,22 +12,31 @@ body {
   background: linear-gradient(287.56deg, #c2e9fb 0%, #a1c4fd 100%);
   font-size: 1.6rem;
   font-family: 'DM Sans', sans-serif;
+  text-align: center;
 
   display: grid;
   place-items: center; /* Joga pro meio da tela */
   height: 100vh; /* Aí quando botamos altura ele vai para o centro */
 }
 
+.hide {
+  display: none;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4.8rem 6.4rem 6.4rem;
   gap: 4.8rem;
 
   background: #ffffff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.6rem;
+
+  width: min(42.8rem, 90%);
+
+  padding: 4.8rem 6.4rem 6.4rem;
+  margin-top: -12rem; /* Jogando o main um pouco mais acima do centro */
 }
 
 main h1 {
@@ -36,6 +45,8 @@ main h1 {
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 2.9rem;
+
+  margin-bottom: 1.6rem;
 }
 
 main p {
@@ -45,7 +56,69 @@ main p {
 
 main form {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5px;
 
-  width: 12.5rem;
-  height: 5.3rem;
+  margin-top: 4.8rem;
+}
+
+form input {
+  color: #34355b;
+  font-weight: 400;
+  line-height: 2.1rem;
+
+  background-color: #dce2e9;
+  border-radius: 0.4rem 0 0 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.120);
+
+  padding: 1.6rem;
+
+  width: 6.4rem;
+  height: 4.8rem;
+}
+
+form button {
+  color: white;
+  font-weight: 700;
+
+  padding: 1.6rem;
+
+  background-color: #7879f1;
+  border-radius: 0 0.4rem 0.4rem 0;
+  border: none;
+
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #404073;
+}
+
+/* Screen 2 */
+
+main h2 {
+  font-size: 2.4rem;
+  font-weight: normal;
+
+  margin-bottom: 3.3rem;
+}
+
+.screen2 button {
+  color: white;
+  font-weight: 700;
+
+  padding: 1.6rem;
+
+  background-color: #7879f1;
+  border-radius: 0.4rem;
+  border: none;
+
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.screen2 button:hover {
+  background-color: #404073;
 }

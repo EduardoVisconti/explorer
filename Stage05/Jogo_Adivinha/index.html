@@ -15,13 +15,22 @@
   </head>
   <body>
     <main>
-      <h1>Jogo da Adivinhação</h1>
-      <p>Adivinhe o número entre 0 e 10</p>
-      
-      <form>
-        <input type="text" name="" id="">
-        <button>Tentar</button>
-      </form>
+      <div class="screen1">
+        <h1>Jogo da Adivinhação</h1>
+        <p>Adivinhe o número entre 0 e 10</p>
+
+        <form>
+          <input type="number" id="inputNumber" />
+          <button id="btnSubmit">Tentar</button>
+        </form>
+      </div>
+
+      <div class="screen2 hide">
+        <h2>Acertou em 3 tentativas</h2>
+        <button id="btnRetry"> Jogar novamente</button>
+      </div>
     </main>
+
+    <script src="./main.js"></script>
   </body>
 </html>
