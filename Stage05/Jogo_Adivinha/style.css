@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(287.56deg, #c2e9fb 0%, #a1c4fd 100%);
+  font-size: 1.6rem;
+  font-family: 'DM Sans', sans-serif;
+
+  display: grid;
+  place-items: center; /* Joga pro meio da tela */
+  height: 100vh; /* Aí quando botamos altura ele vai para o centro */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4.8rem 6.4rem 6.4rem;
+  gap: 4.8rem;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+main h1 {
+  color: #34355b;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+}
+
+main p {
+  color: rgba(52, 53, 91, 0.8);
+  font-weight: 400;
+}
+
+main form {
+  display: flex;
+
+  width: 12.5rem;
+  height: 5.3rem;
+}
