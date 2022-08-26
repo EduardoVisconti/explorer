@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /* colors */
+  --tt-heading: #0c3440;
+
+  --tt-label: #00453a;
+  --tt-input: #212529;
+  --ot-input: #02799d;
+  --bd-input: rgba(73, 80, 87, 0.3);
+  --tt-placeholder: rgba(73, 80, 87, 0.5);
+  --bg-input: #dce2e9;
+
+  --tt-button: white;
+  --bg-button: #02799d;
+  --bg-button-hover: #022c38b0;
+
+  --bg-error: #f03e3e;
+  --tt-error: white;
+}
+
+body {
+  background-color: #040924;
+  font-family: 'Roboto', sans-serif;
+}
+
+body,
+input,
+button {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-content: center; /* Vai estar sempre tentando manter o conteúdo ao centro do centro */
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-inline: auto;
+  padding: 4.8rem 6.4rem 6.4rem;
+
+  max-width: 42.8rem;
+}
+
+form legend {
+  margin-bottom: 3.2rem;
+}
+
+.title {
+  color: var(--tt-heading);
+  font-weight: bold;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+form {
+  width: 30rem;
+}
+
+form .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.input-wrapper + .input-wrapper {
+  /* pega o input do input */
+  margin-top: 1.6rem;
+}
+
+.input-wrapper label {
+  color: var(--tt-label);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+
+  display: block; /* para aceitar o margin abaixo, pois era display inline */
+  margin-bottom: 0.8rem;
+}
+
+form input,
+form button {
+  border-radius: 0.4rem;
+
+  width: 100%; /* obs */
+}
+
+form input {
+  background-color: var(--bg-input);
+  border: 1px solid var(--bd-input);
+
+  padding: 1.6rem;
+}
+
+form input:focus {
+  outline: 2px solid var(--ot-input);
+}
+
+form input::placeholder {
+  color: var(--tt-placeholder);
+}
+
+form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+
+  color: var(--tt-button);
+  font-weight: bold;
+
+  background-color: var(--bg-button);
+  border: none;
+
+  margin-top: 3.2rem;
+  padding: 1.6rem;
+
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: var(--bg-button-hover);
+}
+
+/* Modal */
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper {
+  position: absolute; /* Ficar por cima de tudo */
+  inset: 0; /*top, right, left, bottom: 0 */
+  background-color: rgba(0, 0, 0, 0.7);
+
+  display: grid;
+  place-content: center;
+  height: 100vh;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: relative; /* Para conseguir colocar o 'X' dentro da box */
+}
+
+.modal button {
+  background: none;
+  border: none;
+
+  position: absolute; /* Para conseguirmos colocar dentro da box temos que passar a posição relativa para o pai dele, nesse caso é o .modal ^ */
+  top: 1.6rem;
+  right: 1.6rem;
+
+  cursor: pointer;
+  
+  transition: transform .3s;
+}
+
+.modal button:hover {
+  transform: scale(1.1);
+}
+
+/* alert error */
+.alert-error.open {
+  visibility: visible;
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.alert-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  background-color: var(--bg-error);
+
+  color: var(--tt-error);
+  font-weight: bold;
+  text-align: center;
+
+  padding: .8rem 0;
+
+  visibility: hidden;
+  opacity: 0;
+  
+  transform: translateY(-3rem);
+  transition: transform;
+}
