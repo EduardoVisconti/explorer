@@ -36,3 +36,13 @@ let minutes = Number(minutesDisplay.textContent)
 }
 
 \\\\\\\\\\\\\\\\
+
+#função recursiva no JS é uma função que chama a si mesma até encontrar uma instrução de parar;
+
+método padStart() - É um método que preenche uma string com outra string até atingir o tamanho que foi fornecido;
+
+estrutura de uma Factory - É uma função que vai retornar um objeto;
+
+injeção de dependências? - É uma técnica onde um objeto fornece as dependências de um outro objeto;
+
+Sobre escopo é correto afirmar que: O escopo que determina quais dados podem ou não ser acessados em determinada parte do código;
