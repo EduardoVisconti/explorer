@@ -1,12 +1,3 @@
-/*  A FAZERES
-
-- REFATURAR NOMES, ETC
-- LET PLAY PRO SOUNDS ######
-- FUNÇÃO PLAYSOUND(sound) E STOPSOUND
-- ISFINISHED PRO COUNTDOWN #######
-
-*/
-
 const buttonPlay = document.querySelector('.play')
 const buttonStop = document.querySelector('.stop')
 const buttonIncrease = document.querySelector('.plus')
@@ -52,6 +43,7 @@ buttonPlay.addEventListener('click', function () {
 })
 
 buttonStop.addEventListener('click', function () {
+  stopSounds()
   clearTimeout(timerTimeOut)
   updateTimerDisplay(minutes, 0)
 })
@@ -70,48 +62,44 @@ buttonDecrease.addEventListener('click', function () {
 
 /* SOUNDS */
 
-const soundFlorest = new Audio('./sounds/Floresta.wav')
-const soundComfy = new Audio('./sounds/Cafeteria.wav')
+const soundNature = new Audio('./sounds/Floresta.wav')
+const soundCoffeeShop = new Audio('./sounds/Cafeteria.wav')
 const soundRain = new Audio('./sounds/Chuva.wav')
-const soundChill = new Audio('./sounds/Lareira.wav')
+const soundFirePlace = new Audio('./sounds/Lareira.wav')
 
-const buttonFlorest = document.querySelector('.nature')
+const buttonNature = document.querySelector('.nature')
 const buttonRain = document.querySelector('.rain')
-const buttonComfy = document.querySelector('.comfy')
-const buttonChill = document.querySelector('.chill')
+const buttonCoffeeShop = document.querySelector('.coffeeshop')
+const buttonFirePlace = document.querySelector('.fireplace')
 
-let playSong
+let playSound
 
 function playSounds(sound) {
   stopSounds()
 
-  playSong = sound
-  playSong.loop = true
-  playSong.play()
+  playSound = sound
+  playSound.loop = true
+  playSound.play()
 }
 
 function stopSounds() {
-  if (playSong) {
-    playSong.pause()
+  if (playSound) {
+    playSound.pause()
   }
 }
 
-buttonFlorest.addEventListener('click', function () {
-  buttonFlorest.classList.add('buttonSoundsActive')
-  buttonComfy.classList.remove('buttonSoundsActive')
-  buttonRain.classList.remove('buttonSoundsActive')
-  buttonChill.classList.remove('buttonSoundsActive')
-  playSounds(soundFlorest)
+buttonNature.addEventListener('click', function () {
+  playSounds(soundNature)
 })
 
-buttonComfy.addEventListener('click', function () {
-  playSounds(soundComfy)
+buttonCoffeeShop.addEventListener('click', function () {
+  playSounds(soundCoffeeShop)
 })
 
 buttonRain.addEventListener('click', function () {
   playSounds(soundRain)
 })
 
-buttonChill.addEventListener('click', function () {
-  playSounds(soundChill)
+buttonFirePlace.addEventListener('click', function () {
+  playSounds(soundFirePlace)
 })

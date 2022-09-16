@@ -36,18 +36,18 @@ button {
   cursor: pointer;
 }
 
-.sounds button:hover {
+.sounds button:hover, .sounds button:focus {
   background-color: #02799d;
   transition: 0.5s;
 }
 
-.sounds button:hover svg path {
-  fill: #fff;
+.sounds button:hover svg path, .sounds button:focus svg path {
+  fill: white;
   transition: 0.5s;
 }
 
 .sounds button {
-  background-color: #e1e1e6;
+  background-color: #cacace;
 
   border-radius: 2.4rem;
 
