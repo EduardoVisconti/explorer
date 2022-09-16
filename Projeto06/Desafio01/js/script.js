@@ -6,7 +6,7 @@ const buttonDecrease = document.querySelector('.minus')
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
 
-let timerStop
+let timerTimeOut
 let minutes = Number(minutesDisplay.textContent)
 
 function updateTimerDisplay(minutes, seconds) {
@@ -28,6 +28,7 @@ function countdown() {
     }
 
     if (isFinished) {
+      stopSounds()
       return
     }
 
@@ -49,15 +50,23 @@ buttonStop.addEventListener('click', function () {
 })
 
 buttonIncrease.addEventListener('click', function () {
-  minutesDisplay.textContent = String(
-    Number(minutesDisplay.textContent) + 5
-  ).padStart(2, '0')
+  let minutes = minutesDisplay.textContent = Number(minutesDisplay.textContent) + 5 //precisei criar uma variavel minutes para fazer funcionar
+
+  if (minutes >= 60) {
+    minutes = 60
+  }
+
+  minutesDisplay.textContent = String(minutes).padStart(2, '0')
 })
 
 buttonDecrease.addEventListener('click', function () {
-  minutesDisplay.textContent = String(
-    Number(minutesDisplay.textContent) - 5
-  ).padStart(2, '0')
+  let minutes = minutesDisplay.textContent = Number(minutesDisplay.textContent) - 5
+
+  if (minutes <= 0) {
+    minutes = 0
+  }
+
+  minutesDisplay.textContent = String(minutes).padStart(2, '0')
 })
 
 /* SOUNDS */
