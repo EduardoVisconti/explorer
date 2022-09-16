@@ -31,17 +31,19 @@ main {
   gap: 3.2rem;
 }
 
-.buttonSoundsActive {
-  fill: white;
-}
-
-.sounds > button:hover {
-  background-color: #02799d;
-}
-
 button {
   border: none;
   cursor: pointer;
+}
+
+.sounds button:hover {
+  background-color: #02799d;
+  transition: 0.5s;
+}
+
+.sounds button:hover svg path {
+  fill: #fff;
+  transition: 0.5s;
 }
 
 .sounds button {
