@@ -10,7 +10,7 @@ export default function Timer({
   let minutes = Number(minutesDisplay.textContent)
 
   function updateDisplay(newMinutes, seconds) {
-    newMinutes = newMinutes === undefined ? minutes : newMinutes //3 valores em uma linha só (ternario), funciona como um if. o newMinutes é exatamente igual o undefined ?(se s) coloque em em minutes :(se n) coloque esse newMinutes (que é oq o cliente escolheu)
+    newMinutes = newMinutes === undefined ? minutes : newMinutes //3 valores em uma linha só (ternario). funciona como um if, o newMinutes é exatamente igual o undefined ?(se s) coloque em em minutes :(se n) coloque esse newMinutes (que é oq o cliente escolheu)
     seconds = seconds === undefined ? 0 : seconds
     minutesDisplay.textContent = String(newMinutes).padStart(2, '0')
     secondsDisplay.textContent = String(seconds).padStart(2, '0')

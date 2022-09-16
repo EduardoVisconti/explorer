@@ -31,8 +31,12 @@ main {
   gap: 3.2rem;
 }
 
-.sounds>button:focus {
-  background-color:#02799D;
+.buttonSoundsActive {
+  fill: white;
+}
+
+.sounds > button:hover {
+  background-color: #02799d;
 }
 
 button {
@@ -41,8 +45,8 @@ button {
 }
 
 .sounds button {
-  background-color: #E1E1E6;
-  
+  background-color: #e1e1e6;
+
   border-radius: 2.4rem;
 
   width: 13.8rem;
