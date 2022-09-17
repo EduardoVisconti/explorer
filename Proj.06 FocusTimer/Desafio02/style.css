@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+.page,
+.sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.page {
+  place-items: center;
+
+  min-height: 100vh;
+  max-width: 80rem;
+
+  margin: auto;
+
+  color: #323238;
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.light-icon {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+}
+
+.light-icon:hover svg path {
+  fill: rgb(77, 77, 2);
+}
+
+.controls button:hover svg path {
+  fill: #02799d;
+  transition: 0.5s;
+}
+
+.sounds {
+  flex-direction: row;
+  gap: 3.2rem;
+}
+
+.sounds button {
+  background-color: #cacace;
+
+  border-radius: 2.4rem;
+
+  width: 13.8rem;
+  height: 15.2rem;
+}
+
+.sounds button:hover,
+.sounds button:focus {
+  background-color: #02799d;
+  transition: 0.5s;
+}
+
+.sounds button:hover svg path,
+.sounds button:focus svg path {
+  fill: white;
+  transition: 0.5s;
+}
+
+.sounds button::after {
+  content: 'alo';
+  width: 15px;
+  color: black;
+}
