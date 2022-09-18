@@ -8,6 +8,10 @@
   font-size: 62.5%;
 }
 
+.hide {
+  display: none;
+}
+
 .page,
 .sounds {
   display: grid;
@@ -39,7 +43,7 @@ button {
 }
 
 .light-icon:hover svg path {
-  fill: rgb(77, 77, 2);
+  opacity: 0.5;
 }
 
 .controls button:hover svg path {
@@ -48,7 +52,6 @@ button {
 }
 
 .sounds {
-  flex-direction: row;
   gap: 3.2rem;
 }
 
@@ -73,8 +76,160 @@ button {
   transition: 0.5s;
 }
 
-.sounds button::after {
-  content: 'alo';
-  width: 15px;
-  color: black;
+/* VOLUME - INPUT */
+
+.sounds button:hover input[type='range'],
+.sounds button:focus input[type='range'] {
+  background: rgba(255, 255, 255, 0.4);
+  background-image: linear-gradient(white, white);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.sounds button:hover input[type='range']::-webkit-slider-thumb,
+.sounds button:focus input[type='range']::-webkit-slider-thumb {
+  background: white;
+}
+
+.sounds button:hover input[type='range']::-moz-range-thumb,
+.sounds button:focus input[type='range']::-moz-range-thumb {
+  background: white;
+}
+
+.sounds button:hover input[type='range']::-ms-thumb,
+.sounds button:focus input[type='range']::-ms-thumb {
+  background: white;
+}
+
+input[type='range']:focus {
+  box-shadow: 0 0 1px 1px #4b81dd86;
+  outline: none;
+}
+
+input[type='range'] {
+  -webkit-appearance: none; /* esconde o slider para conseguir editar o slider */
+  margin-top: 3.2rem;
+  width: 9rem;
+  height: 0.4rem;
+  background: rgba(153, 153, 153, 0.6); /* cor que fica depois da bolinha */
+  border-radius: 0.5rem;
+  background-image: linear-gradient(
+    #323238,
+    #323238
+  ); /* Para conseguir fazer a cor antes e depois(^) da bolinha */
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Input Thumb - Bolinha/Dedão/Arrastador */
+
+/* Estilos para webKit/Blink */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: #323238;
+  cursor: ew-resize; /* seta scroll horizontal */
+  box-shadow: 0 0 0.2rem 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Estilos para Firefox */
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: #323238;
+  cursor: ew-resize;
+  box-shadow: 0 0 0.2rem 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Estilos para IE */
+input[type='range']::-ms-thumb {
+  -webkit-appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: #323238;
+  cursor: ew-resize;
+  box-shadow: 0 0 0.2rem 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+/* input[type='range']::-webkit-slider-thumb:hover 
+como fazer o hover na bolinha ^ */
+
+/* Input Track */
+input[type='range']::-webkit-slider-runnable-track {
+  /* V esconde o slider para conseguir adicionar os estilos V */
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+input[type='range']::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+input[type='range']::-ms-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+/* ********** DARK MODE ************* */
+
+.dark-mode {
+  background-color: #121214;
+}
+
+.dark-mode .page {
+  color: white;
+}
+
+.dark-mode .controls button,
+.dark-mode .light-icon {
+  background: none;
+}
+
+.dark-mode button svg path {
+  fill: white;
+}
+
+.dark-mode .sounds button {
+  background-color: #29292e;
+}
+
+.dark-mode .sounds button:hover,
+.dark-mode .sounds button:focus {
+  background-color: #0a3442;
+}
+
+/* VOLUME */
+
+.dark-mode input[type='range'] {
+  background: rgba(255, 255, 255, 0.4);
+  background-image: linear-gradient(white, white);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.dark-mode input[type='range']::-webkit-slider-thumb {
+  background: white;
+}
+
+.dark-mode input[type='range']::-moz-range-thumb {
+  background: white;
+}
+
+.dark-mode input[type='range']::-ms-thumb {
+  background: white;
 }

@@ -50,7 +50,8 @@ buttonStop.addEventListener('click', function () {
 })
 
 buttonIncrease.addEventListener('click', function () {
-  let minutes = minutesDisplay.textContent = Number(minutesDisplay.textContent) + 5 //precisei criar uma variavel minutes para fazer funcionar
+  let minutes = (minutesDisplay.textContent =
+    Number(minutesDisplay.textContent) + 5) //precisei criar uma variavel minutes para fazer funcionar
 
   if (minutes >= 60) {
     minutes = 60
@@ -60,7 +61,8 @@ buttonIncrease.addEventListener('click', function () {
 })
 
 buttonDecrease.addEventListener('click', function () {
-  let minutes = minutesDisplay.textContent = Number(minutesDisplay.textContent) - 5
+  let minutes = (minutesDisplay.textContent =
+    Number(minutesDisplay.textContent) - 5)
 
   if (minutes <= 0) {
     minutes = 0

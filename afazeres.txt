@@ -1,0 +1,28 @@
+// button stop
+sons
+limpar #
+resetar #
+
+//button increase
+passar p número e +5
+n pode +60
+voltar uma string
+
+//button decrease
+passar p número e -5
+n pode -0
+volta uma string
+
+-- sounds --
+
+//func q recebe sound
+parar tds musicas
+playSound = sound
+ativa loop
+da play
+
+//stop sound
+caso esteja tocando, pare
+
+//button pro sounds
+colocar a musica entre () dps da func
