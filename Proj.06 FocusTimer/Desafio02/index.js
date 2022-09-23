@@ -8,7 +8,7 @@ buttonLight.addEventListener('click', function () {
   document.body.classList.add('dark-mode')
 })
 
-buttonDark.addEventListener('click', function() {
+buttonDark.addEventListener('click', function () {
   buttonDark.classList.add('hide')
   buttonLight.classList.remove('hide')
   document.body.classList.remove('dark-mode')
@@ -45,6 +45,7 @@ function countdown() {
     }
 
     if (isFinished) {
+      resetTimer()
       return
     }
 
@@ -54,13 +55,105 @@ function countdown() {
   }, 1000)
 }
 
+function resetTimer() {
+  clearTimeout(timerTimeOut)
+  updateTimerDisplay(minutes, 0)
+  stopSounds()
+}
+
+/* TIMER CONTROL */
 buttonPlay.addEventListener('click', function () {
   countdown()
 })
 
-buttonStop.addEventListener('click', function() {
-  clearTimeout(timerTimeOut)
-  up
+buttonStop.addEventListener('click', function () {
+  resetTimer()
+})
+
+buttonIncrease.addEventListener('click', function () {
+  let minutes = (minutesDisplay.textContent =
+    Number(minutesDisplay.textContent) + 5)
+
+  if (minutes >= 60) {
+    minutes = 60
+  }
+
+  minutesDisplay.textContent = String(minutes).padStart(2, '0')
+})
+
+buttonDecrease.addEventListener('click', function () {
+  let minutes = (minutesDisplay.textContent =
+    Number(minutesDisplay.textContent) - 5)
+
+  if (minutes <= 0) {
+    minutes = 0
+  }
+
+  minutesDisplay.textContent = String(minutes).padStart(2, '0')
+})
+
+/* SOUND */
+const buttonNature = document.querySelector('.nature')
+const buttonRain = document.querySelector('.rain')
+const buttonCoffeeShop = document.querySelector('.coffeeshop')
+const buttonFirePlace = document.querySelector('.fireplace')
+
+const audioNature = new Audio('./sounds/Floresta.wav')
+const audioRain = new Audio('./sounds/Chuva.wav')
+const audioCoffeeShop = new Audio('./sounds/Cafeteria.wav')
+const audioFirePlace = new Audio('./sounds/Lareira.wav')
+
+const volumeNature = document.querySelector('#volNature')
+const volumeRain = document.querySelector('#volRain')
+const volumeCoffeeShop = document.querySelector('#volCoffeeShop')
+const volumeFirePlace = document.querySelector('#volFirePlace')
+
+volumeNature.addEventListener('input', function () {
+  audioNature.volume = volumeNature.value
+})
+
+volumeRain.addEventListener('input', function () {
+  audioRain.volume = volumeRain.value
+})
+
+volumeCoffeeShop.addEventListener('input', function () {
+  audioCoffeeShop.volume = volumeCoffeeShop.value
+})
+
+volumeFirePlace.addEventListener('input', function () {
+  audioFirePlace.volume = volumeFirePlace.value
+})
+
+let playSound
+
+function stopSounds() {
+  if (playSound) {
+    playSound.pause()
+  }
+}
+
+function playSounds(sound) {
+  stopSounds()
+
+  playSound = sound
+  playSound.loop = true
+  playSound.play()
+}
+
+buttonNature.addEventListener('click', function () {
+  playSounds(audioNature)
+})
+
+buttonRain.addEventListener('click', function () {
+  playSounds(audioRain)
+})
+
+buttonCoffeeShop.addEventListener('click', function () {
+  playSounds(audioCoffeeShop)
+})
+
+buttonFirePlace.addEventListener('click', function () {
+  playSounds(audioFirePlace)
 })
 
 /* RANGE INPUT */
