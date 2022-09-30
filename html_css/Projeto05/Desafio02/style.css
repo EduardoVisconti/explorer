@@ -89,7 +89,7 @@ header h1 {
 
   margin: 1.5rem auto 6rem;
 
-  max-width: clamp(31rem, 25rem + 40vw, 117rem);
+  max-width: clamp(31rem, 25rem + 40vw, 90rem);
 }
 
 /* IMAGES & SPAN */
