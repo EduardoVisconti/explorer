@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "name": "proj.07_spa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
