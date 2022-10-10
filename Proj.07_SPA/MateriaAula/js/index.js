@@ -21,7 +21,7 @@ class Passaro {
 
 class Pato extends Passaro {
   constructor() {
-    super()
+    super() - herda toda a classe Passaro
   }
 
   voar() {

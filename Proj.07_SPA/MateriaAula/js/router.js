@@ -17,13 +17,13 @@ export class Router {
   }
 
   handle() {
-    const { pathname } = window.location
-    const route = this.routes[pathname] || this.routes[404]
+    const { pathname } = window.location //pega o pathname dentro da location e bota na const
+    const route = this.routes[pathname] || this.routes[404] //se n tiver rota, mostra o 404
 
     fetch(route) //vai buscar a rota
-      .then(data => data.text()) //quando concluir prometo q vou retornar uma função (arrow function, retorna direto)
+      .then(data => data.text()) //transforma o data em texto/ quando concluir prometo q vou retornar uma função (arrow function, retorna direto)
       .then(html => {
-        document.querySelector('#app').innerHTML = html
+        document.querySelector('#app').innerHTML = html //colocando o html
       })
   }
 }
