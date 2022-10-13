@@ -67,7 +67,7 @@ p {
   place-content: center;
   text-align: center;
 
-  margin-top: -12.3rem; /* 100% height */
+  margin-top: -12.5rem; /* 100% height */
 }
 
 .home main button {
@@ -94,7 +94,8 @@ p {
 
 /* THE UNIVERSE & EXPLORATION */
 .universe main,
-.exploration main {
+.exploration main,
+.e404 {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
