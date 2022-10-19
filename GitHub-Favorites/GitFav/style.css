@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --ff-primary: 'Roboto', sans-serif;
+  --text-color: #e1e1e6;
+
+  --input-bg: #06181c;
+  --input-text-color: #7c7c8a;
+
+  --btn-bg: #065e7c;
+
+  --table-header-bg: #092d38;
+}
+
+body {
+  background-color: black;
+  color: var(--text-color);
+  font-family: var(--ff-primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+#app {
+  padding: 2rem;
+  max-width: 112rem;
+  /* margin: 0 auto; */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  display: flex; /* conforme mexemos no button V, ele desalinhou do input e svg, por isso usamos o flex aqui */
+  gap: 0.8rem;
+}
+
+.search input {
+  background-color: var(--input-bg);
+  color: var(--input-text-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  width: 46rem;
+  height: 4rem;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  padding: 1.6rem;
+}
+
+.search button {
+  background-color: var(--btn-bg);
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+
+  height: 4rem;
+  padding: 1.2rem 3.2rem;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 0.5rem;
+}
