@@ -12,12 +12,18 @@
   --input-bg: #06181c;
   --input-text-color: #7c7c8a;
 
-  --btn-bg: #065e7c;
+  --btn-fav-color: #065e7c;
+  --btn-remove: #f75a68;
 
+  --table-bg: #030b0d;
+  --table-border-color: #4a808c;
   --table-header-bg: #092d38;
+  --table-odd-bg: rgba(6, 22, 27, 0.5);
+  --table-even-bg: #06181c;
 }
 
 body {
+  /* testar o ' * ' pra colocar a fonte corretamente */
   background-color: black;
   color: var(--text-color);
   font-family: var(--ff-primary);
@@ -40,8 +46,10 @@ body {
 #app {
   padding: 2rem;
   max-width: 112rem;
-  /* margin: 0 auto; */
+  margin: 0 auto;
 }
+
+/* HEADER / INPUT */
 
 header {
   display: flex;
@@ -70,7 +78,7 @@ header {
 }
 
 .search button {
-  background-color: var(--btn-bg);
+  background-color: var(--btn-fav-color);
   color: white;
   font-weight: 700;
   font-size: 1.4rem;
@@ -78,9 +86,89 @@ header {
 
   height: 4rem;
   padding: 1.2rem 3.2rem;
+  border-radius: 0.5rem;
 
   display: flex;
   align-items: center;
+  gap: 0.8rem;
 
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: white;
+  color: var(--btn-fav-color);
+  transition: 0.6s;
+}
+
+.search button:hover svg path {
+  fill: var(--btn-fav-color);
+}
+
+/* TABLE */
+
+table {
+  border: 1px solid var(--table-border-color);
   border-radius: 0.5rem;
+  border-spacing: 0;
+
+  width: 100%;
+
+  margin-top: 8.2rem;
+}
+
+table th {
+  background-color: var(--table-header-bg);
+  text-align: left;
+  padding: 1.6rem 0 1.6rem 4rem;
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--table-odd-bg);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--table-even-bg);
+}
+
+table td {
+  padding: 2.7rem 0 2.7rem 4rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+td.user img {
+  border-radius: 50%;
+
+  width: 5rem;
+  height: 5rem;
+
+  object-fit: cover;
+}
+
+td.user a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+td.user span {
+  font-weight: 400;
+}
+
+.btn-remove {
+  color: var(--btn-remove);
+  cursor: pointer;
+  font-weight: 700;
+
+  background: none;
+  border: none;
+}
+
+.btn-remove:hover {
+  transform: translateY(-0.4rem);
+  transition: 0.4s;
 }
