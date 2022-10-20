@@ -23,8 +23,10 @@
 }
 
 body {
-  /* testar o ' * ' pra colocar a fonte corretamente */
   background-color: black;
+}
+
+body * { /* bota em TODOS os elementos */
   color: var(--text-color);
   font-family: var(--ff-primary);
   font-size: 2rem;
@@ -79,13 +81,13 @@ header {
 
 .search button {
   background-color: var(--btn-fav-color);
-  color: white;
-  font-weight: 700;
   font-size: 1.4rem;
   text-transform: uppercase;
 
   height: 4rem;
+  
   padding: 1.2rem 3.2rem;
+
   border-radius: 0.5rem;
 
   display: flex;
@@ -162,7 +164,6 @@ td.user span {
 .btn-remove {
   color: var(--btn-remove);
   cursor: pointer;
-  font-weight: 700;
 
   background: none;
   border: none;
