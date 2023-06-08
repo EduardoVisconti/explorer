@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --pink: #b52184;
+  --purple: #312d64;
+  --white: #f9f4fb;
+
+  --purple-bg: linear-gradient(96.21deg, #343193 0%, #302c63 99.68%);
+}
+
+body {
+  background-color: var(--white);
+  font-family: 'Mulish', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+/* Typography */
+
+h1,
+h2 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--pink);
+  line-height: 4rem;
+
+  margin: 1.7rem 0 0.5rem;
+}
+
+h3 {
+  color: var(--pink);
+  font-size: 2.9rem;
+  font-weight: 900;
+
+  margin: 3.3rem 0 1.9rem;
+}
+
+p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--purple);
+  line-height: 2.5rem;
+
+  margin-bottom: 3.5rem;
+}
+
+/* Hero */
+
+#hero {
+  display: grid;
+  text-align: center;
+
+  padding: 0 3.4rem 9.3rem 3.2rem;
+}
+
+#hero .astronaut {
+  margin: 0 auto;
+
+  width: clamp(25rem,50%,72rem); /* largura mínima de 25rem, largura máxima de 72rem, ou 50% do contêiner pai, o que for maior */
+  height: 100%;
+}
+
+#hero .hero-cta .button-down img {
+  width: 3rem;
+}
+
+/* Cards */
+
+#cards {
+  background: var(--purple-bg);
+
+  width: 100%; /* idk y */
+  height: 100%; /* idk y */
+
+  padding: 5.3rem 3.9rem 5.5rem;
+
+  display: grid;
+  gap: 4.9rem;
+}
+
+#cards .card {
+  background-color: var(--white);
+  padding: 2.6rem;
+  border-radius: 2rem;
+}
+
+#cards .card img {
+  width: 8rem;
+  margin-bottom: 3.3rem;
+}
+
+#cards .card-text {
+  width: auto;
+  padding-right: 3rem;
+}
+
+/* Contact */
+
+#contact {
+  padding: 7.8rem 3.9rem 6.5rem;
+
+  width: 100%;
+  height: 100%;
+}
+
+#contact form fieldset,
+#contact form button {
+  border: none;
+}
+
+#contact form h2 {
+  margin-bottom: 4.3rem;
+}
+
+#contact form .input-wrapper {
+  margin-bottom: 2.4rem;
+}
+
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  border: 0.15rem solid var(--purple);
+  border-radius: 1.6rem;
+  padding: 1.6rem 1.6rem 1.6rem;
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+#contact form input {
+  padding-left: 5rem;
+}
+
+#contact form textarea {
+  height: 12.6rem;
+}
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+#contact form button {
+  background: var(--purple-bg);
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  padding: 1rem 1.6rem;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  transition: filter 200ms;
+}
+
+#contact form button:hover {
+  filter: brightness(0.9);
+}
+
+#name {
+  background: url(./images/nome.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+#email {
+  background: url(./images/email.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+/* Footer */
+
+footer {
+  padding: 3.2rem 1.6rem;
+  background: var(--purple-bg);
+}
+
+footer p {
+  color: var(--white);
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* MEDIA WEB - 1440xp */
+
+@media (min-width: 1440px) {
+  /* Typography */
+  h1 {
+    font-size: 5.8rem;
+    line-height: 7.3rem;
+  }
+
+  h2 {
+    font-size: 4.2rem;
+    line-height: 5.3rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+    line-height: 4.4rem;
+  }
+
+  #hero .hero-cta p {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    margin-bottom: 17.9rem;
+  }
+
+  #cards .card-text p {
+    font-size: 2rem;
+    line-height: 2.4rem;
+
+    padding: 0;
+  }
+
+  /* Hero */
+  #hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2.9rem 10.3rem 10.9rem;
+    max-height: 83.6rem;
+  }
+
+  #hero .astronaut {
+    order: 2;
+  }
+
+  #hero .hero-cta {
+    text-align: left;
+    order: 1;
+    margin-top: 31.2rem;
+  }
+
+  #hero .hero-cta .button-down {
+    margin: 0;
+    justify-self: flex-end;
+  }
+
+  /* CARD */
+
+  #cards {
+    display: flex;
+    padding: 6.4rem 11.1rem;
+    gap: 6rem;
+  }
+
+  #cards .card img {
+    width: 9.7rem;
+    margin: 0;
+  }
+
+  #cards .card .card-text {
+    padding: 0;
+  }
+
+  /* CONTACT */
+
+  #contact {
+    background: url(./images/stars-bg.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+  #contact form {
+    margin-left: 10.9rem;
+  }
+  
+  #contact form input,
+  #contact form textarea {
+    width: clamp(60rem, 50%, 100%);
+  }
+}
