@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* font */
+  font-size: 62.5%;
+  --base-font: 'Open Sans', sans-serif;
+  --header-font: 'Dosis', sans-serif;
+
+  /* colors */
+  --purple: #3F3D56;
+  --pink: #EE24FF;
+  --gray: #828282;
+  --white: #ECEFF2;
+}
+
+body {
+  background-color: var(--white);
+  font-family: var(--base-font);
+
+  display: grid;
+  text-align: center;
+
+  min-height: 79rem;
+}
+
+main {
+  margin: 6.4rem auto;
+  padding: 4rem;
+  max-width: 63rem;
+}
+
+main img {
+  max-width: 35rem;
+  max-height: 23.8rem;
+}
+
+main h1 {
+  color: var(--purple);
+  font-family: var(--header-font);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 4rem;
+
+  margin-top: 3.2rem;
+  margin-bottom: 1.6rem;
+}
+
+main h1 span {
+  color: var(--pink);
+}
+
+main p {
+  color: var(--gray);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+main p:first-of-type {
+  margin-bottom: 3.2rem;
+}
+
+main a,
+footer a {
+  text-decoration: none;
+  color: var(--purple);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+}
+
+footer .footer-menu {
+  display: flex;
+  justify-content: center;
+  gap: 4.2rem;
+}
+
+footer img {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
