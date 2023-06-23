@@ -1,6 +1,6 @@
 export class GithubUser {
   static search(username) {
-    //metodo estatico
+    //método estático
     const endpoint = `https://api.github.com/users/${username}`
 
     return fetch(endpoint)

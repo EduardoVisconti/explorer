@@ -74,7 +74,7 @@ export class FavoritesView extends Favorites {
     this.removeAllTr()
 
     this.entries.forEach(user => {
-      //para cada usuario
+      //para cada usuário
       const row = this.createRow()
 
       row.querySelector('.user img').src = `https://github.com/${user.login}.png`
