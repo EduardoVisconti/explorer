@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --ff-primary: 'Roboto', sans-serif;
+  --text-color: #e1e1e6;
+
+  --input-bg: #06181c;
+  --input-text-color: #7c7c8a;
+
+  --btn-fav-color: #065e7c;
+  --btn-remove: #f75a68;
+
+  --table-bg: #030b0d;
+  --table-border-color: #4a808c;
+  --table-header-bg: #092d38;
+  --table-odd-bg: rgba(6, 22, 27, 0.5);
+  --table-even-bg: #06181c;
+}
+
+body {
+  background-color: black;
+}
+
+body * { /* bota em TODOS os elementos */
+  color: var(--text-color);
+  font-family: var(--ff-primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+#app {
+  padding: 2rem;
+  max-width: 112rem;
+  margin: 0 auto;
+}
+
+/* HEADER / INPUT */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  display: flex; /* conforme mexemos no button V, ele desalinhou do input e svg, por isso usamos o flex aqui */
+  gap: 0.8rem;
+}
+
+.search input {
+  background-color: var(--input-bg);
+  color: var(--input-text-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  width: clamp(30rem, 44rem, 46rem); /* testing */
+  height: 4rem;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  padding: 1.6rem;
+}
+
+.search button {
+  background-color: var(--btn-fav-color);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+
+  height: 4rem;
+  
+  padding: 1.2rem 3.2rem;
+
+  border-radius: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: white;
+  color: var(--btn-fav-color);
+  transition: 0.6s;
+}
+
+.search button:hover svg path {
+  fill: var(--btn-fav-color);
+}
+
+/* TABLE */
+
+table {
+  border: 1px solid var(--table-border-color);
+  border-radius: 0.5rem;
+  border-spacing: 0;
+
+  width: 100%;
+
+  margin-top: 8.2rem;
+}
+
+table th {
+  background-color: var(--table-header-bg);
+  text-align: left;
+  padding: 1.6rem 0 1.6rem 4rem;
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--table-odd-bg);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--table-even-bg);
+}
+
+table td {
+  padding: 2.7rem 0 2.7rem 4rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+td.user img {
+  border-radius: 50%;
+
+  width: 5rem;
+  height: 5rem;
+
+  object-fit: cover;
+}
+
+td.user a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+td.user span {
+  font-weight: 400;
+}
+
+.btn-remove {
+  color: var(--btn-remove);
+  cursor: pointer;
+
+  background: none;
+  border: none;
+}
+
+.btn-remove:hover {
+  transform: translateY(-0.4rem);
+  transition: 0.4s;
+}
