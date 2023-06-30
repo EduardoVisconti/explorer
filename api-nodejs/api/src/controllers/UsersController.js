@@ -7,11 +7,17 @@
   * delete - DELETE para remover um registro
 */
 
+const AppError = require('../utils/AppError')
+
 class UsersController { //estamos usando classe porque ela permite que eu possa criar e acessar varias funções
   create(request, response) { // request para acessar o body, e usando o response para devolver o conteúdo (nome, etc)
     const { name, email, password } = request.body
 
-    response.json({ name, email, password })
+    if(!name){
+      throw new AppError('Nome é obrigatório')
+    }
+
+    response.status(201).json({ name, email, password })
   }
 }
 
