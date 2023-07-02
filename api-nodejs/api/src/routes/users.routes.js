@@ -7,6 +7,7 @@ const usersRoutes = Router()
 const usersController = new UsersController()
 
 usersRoutes.post('/', usersController.create)
+usersRoutes.put('/:id', usersController.update)
 
 module.exports = usersRoutes //estou exportando pra quem quiser utilizar esse arquivo
 
