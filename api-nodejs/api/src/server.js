@@ -1,9 +1,14 @@
 require('express-async-errors') //importando o async error, sempre fazer no começo de tudo
 
+const migrationsRun = require('./database/sqlite/migrations')
+
 const AppError = require('./utils/AppError')
+
 const express = require('express') //colocando toda a pasta express que está dentro do node_modules / importando o express
 
 const routes = require('./routes') //por padrão quando não diz qual arquivo queremos acessar ele carrega a pasta com nome index
+
+migrationsRun() //executando banco de dados
 
 const app = express() //inicializando o express
 app.use(express.json())
