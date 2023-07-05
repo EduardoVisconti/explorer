@@ -1,0 +1,244 @@
+SQL - Aula 1 - O que é Banco de Dados = Composto de tabelas, e a tabela existe no Banco de Dados para organizar os Dados por assuntos e dentro da tabela temos colunas e linhas para organizar o conteúdo dentro da tabela.
+
+Lista de telefones / Lista de compras / Lista de convidados
+
+
+
+* Estrutura de um Banco de Dados
+
+					Cliente 1
+		Tabela de Cliente	Cliente 2
+					Cliente 3
+
+					Produto 1
+Banco de dados	Tabela de Produtos	Produto 2
+					Produto 3
+
+					Venda 1
+		Tabela de Vendas	Venda 2
+					Venda 3
+
+
+
+Coluna = Nome do Dado
+Cada Dado tem um tipo (int = numero, quando tem ? no final quer dizer que é opcional para o usuário)
+
+A tabela sempre tem um nome (users), ela é composta de linhas e cada linha vamos dizer qual é o nome da coluna  e qual o tipo de dado
+
+Tabela composta por colunas e linhas = Banco de dados Relacional
+
+Cardinalidade - Frequência que uma tabela se relaciona com a outra
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 2 - Estrutura dos Dados
+
+<img no desktop>
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 3 - Conectando com o Banco de Dados
+
+npm install sqlite3 sqlite --save
+
+Criamos a pasta database > sqlite > index.js (Por padrão já procura pela index) e depois de finalizarmos o código colamos no server.js
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 4 - SGBD - Sistema Gerenciador de Banco de Dados - Ferramenta que nos deixa visualizar o que tem dentro do Banco, incluir registro, deletar, ver estrutura...
+
+Ferramente: beekeeper studio
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 5 - Criando Tabelas
+
+Letras maiúsculas = TAGs do SQL
+
+
+*Criando as colunas no beekeeper (Nome da coluna e o tipo que vai armazenar)
+CREATE TABLE users (
+
+INTEGER = Números inteiros
+PRIMARY KEY = ID vai ser único e não vai poder se repetir
+AUTOINCREMENT = ID gerado de forma automática (De um em um)
+VARCHAR = Guardar texto
+VARCHAR NULL = Texto opcional ou vazio
+created/updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP = Não pode dar espaço quando for nome composto (created_at)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 6 - SQL = Structured Query Language (Linguagem de Consulta Estruturada), é a linguagem padrão para banco de dados relacionais, usada para manipular dados, criar tabelas, etc...
+
+Comandos DDL = Data Definition Language
+CREATE, DROP, ALTER (alterar, atualizar info)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 7 - Alter = Alterações
+
+ALTER TABLE users
+RENAME TO clients - Renomeando a tabela users para clients
+
+ALTER TABLE users
+ADD status VARCHAR - Adc um campo status do tipo VARCHAR
+
+ALTER TABLE users
+RENAME COLUMN status TO active - Renomeando coluna status para active
+
+ALTER TABLE users
+
+DROP COLUMN status - Excluindo a coluna status
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 8 - Comandos DML = Data Manipulation Language (Comandos que tem foco na manipulação de dados)
+
+C - Create > INSERT
+R - Read > SELECT
+U - Update > UPDATE
+D - Delete > DELETE
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 9 - Manipulando Dados
+
+INSERT INTO users = Insira dentro do users(tabela)
+(name, email, password)
+VALUES = Valor
+('Eduardo', 'eduardo@gmail.com', '123')
+
+SELECT * FROM users = Listar/Selecionar, * todas as colunas, FROM da tabela > users
+SELECT id, name, email FROM users;
+
+Para alguns casos precisamos selecionar o bloco para fazermos o run, e quando queremos "run" todo conteúdo tem que separar os blocos com ; no final
+
+UPDATE users SET
+avatar = 'edavatar.png',
+name = 'Eduardo Visconti'
+WHERE id = 1;
+
+DELETE FROM users
+WHERE id = 4;
+
+Mesmo com o user deletado ele não reaproveitar o ID
+
+^^
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 10 - Migrations - Automatizar a criação de tabelas
+
+const sqliteConnection = require('../../sqlite')
+const createUsers = require('./createUsers')
+
+async function migrationsRun() {
+  const schemas = [createUsers].join('')
+
+  sqliteConnection()
+    .then(db => db.exec(schemas))
+    .catch(error => console.error(error))
+}
+
+module.exports = migrationsRun
+
+o db significa database e representa o banco de dados, servindo para executar consultas no banco de dados. então o db => db.exec(schemas) serve para executar os schemas definidos com os comandos SQL no banco e o .then() serve para executar essa promessa assim que ela estiver pronta.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 11 - Select
+
+const checkUserExists = await database.get('SELECT * FROM users WHERE email = (?)', [email]) //selecionando todos os campos da tabele de users, onde o email seja igual o email que a pessoa está tentando cadastrar
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 12 - Cadastrando usuário
+
+No Beekeeper podemos até colocar em qual ordem/sequencia queremos que apareça,
+SELECT name, id FROM users
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 13 - Criptografando senha do usuário
+
+npm install bcryptjs - Criptografia
+
+const { hash } = require('bcryptjs')
+
+const hashedPassword = await hash(password, 8) = e agora invés de passarmos o valor como 'password', passamos como hashedPassword
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 14 - Atualizando usuário
+
+Dentro do insomnia na pasta users criamos o 'Update' do tipo PUT.
+E quando vamos fazer uma atualização passamos o ID do usuário como parâmetro (Futuramente isso ficará automático)
+
+//verificando se já existe um usuário no banco de dados com o e-mail atualizado e se esse usuário é diferente do usuário atual	V
+
+if (userWithUpdatedEmail && userWithUpdatedEmail.id !== user.id) {
+      throw new AppError..
+
+    user.name = name ?? user.name = se existir o conteúdo dentro de name, é ele quem vai ser utilizado, senão o user.name (continua o que estava)
+    user.email = email
+
+    await database.run(`
+    UPDATE users SET 
+    name = ?,
+    email = ?,
+    updated_at = datetime('now', 'localtime')
+    WHERE id = ?`,
+    [user.name, user.email, new Date(), id]
+    )
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 15 - Atualizando senha
+
+const { hash, compare } = require('bcryptjs') - Adicionamos o compare junto com hash (compare verifica se o valor fornecido corresponde ao hash criptografado)
+
+
+if (password && !old_password){ = Se digitou a senha nova mas não digitou a senha antiga
+	throw new AppError...
+
+if (password && old_password) { = Se digitou as duas senhas
+
+	const checkOldPassword = await compare(old_password, user.password) = comparando se a senha antiga é igual a que esta salva no Banco (user.password)
+
+	if (!checkOldPassword) { = Se a comparação der errado
+	throw new AppError...
+
+	user.password = await hash(password, 8) = atribuindo um novo valor à propriedade password do objeto user, 8 representa a complexidade }
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 16 - Datetime do Banco
+
+updated_at = datetime('now', 'localtime')
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aula 17 - Validando nome e e-mail
+
+user.name = name ?? user.name = se existir o conteúdo dentro de name, é ele quem vai ser utilizado, senão o user.name (continua o que estava)
+
+user.email = email
+
+O operador || retornar o valor da direita, se o valor da esquerda for um dos valores do tipo "falsy".
+O operador ?? retornar o valor da direita, somente se o valor da esquerda for null ou undefined.
+
+valores "falsy": false, null, undefined, NaN, ''
