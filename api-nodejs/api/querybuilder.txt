@@ -1,0 +1,77 @@
+Aula 01 - O que é um SQL Query Builder: Construtor de Consulta
+Permite que você construa instruções SQL independente do banco de dados utilizado
+
+Vamos utilizar o Query Builder para modificar como, SELECT, INSERT, UPDATE (Consulta) > SQL Query Builder gera o código SQL para o Banco de Dados que eu pedi
+
+-------
+
+Aula 03 - Configurando o Knex.js
+
+npm install knex --save
+npx knex init
+
+-------
+
+Aula 04 - Conceito de Migration = Forma de versionar a base de dados
+
+Migrations trabalha na manipulação da base de dados: criando, alterando ou removendo
+
+Métodos de uma Migration
+
+-UP: método responsável por criar ou alterar algo no banco de dados (Vai lá no banco de dados, criar essa tabela pra mim com a estrutura que defini dentro da migration)
+
+-DOWN: responsável pelo rollback. Ou seja, desfazer as alterações realizadas pela migration
+
+---------
+
+Aula 05 - Migrations para Notes
+
+npx knex migrate:latest - Rodar as "ultimas" migrations - Que acabamos automatizando colocando ele dentro do package.json > "migrate": "knex migrate:latest" e para rodar agora usamos o ' npm run migrate '
+
+-----------
+
+Aula 06 - NPM vs NPX
+
+NPM: Node Package Manager = Gerenciador de pacotes padrão para Node.js > Os pacotes e módulos necessários no projeto Node são instalados usando npm e também utilizamos o npm para executar scripts e bibliotecas instaladas
+*NPM é uma ferramente que usa para instalar pacotes*
+
+NPX: Node Package Execute (vem com npm acima da versão 5.2) = Executador de pacotes npm que pode executar qualquer pacote que você quiser do registro npm sem sequer instalar esse pacote
+*NPX é uma ferramente que usa para executar pacotes*
+
+------------
+
+Aula 07 - Primary key e Foreign key
+
+Chave Primaria: Identificador único dentro da tabela, identifica os registros para que cada registro tenha seu próprio identificador, *garantir que esse valor não se repita/duplique*
+
+Chave estrangeira: é uma coluna em uma tabela que se refere a uma chave primária em outra tabela. Ela estabelece uma relação entre as tabelas, permitindo que uma tabela se conecte com a outra.
+
+----------
+
+Aula 08 - Cardinalidade: quantidade de registros que podem estar relacionados entre duas tabelas em um banco de dados. Pode ser "Um-para-Um", "Um-para-Muitos" ou "Muitos-para-Muitos"
+
+-----------
+
+Aula 09 - Migrations para Link e Tag
+
+---------
+
+Aula 16 - Conceito de Inner Join - Serve para unir tabelas (não fisicamente), conseguimos buscar e mostrar de varias tabelas
+
+Precisamos de 3 coisas para unir a tabela:
+
+  V         V              V
+table,  primary_key,  foreign_key
+notes,  notes.id,     tags.note_id
+
+---------
+
+Aula 18 - Map e Filter
+
+Map é uma função do JS para percorrer um array/cada elemento que existe dentro de um Array e podemos manipular e retornar qual o novo conteúdo de cada elemento que pertence esse array
+
+tags.map(tag => {}) - Podemos percorrer cada elemento do tags e cara element fica salvo dentro de uma variável (tag)
+
+Filter devolve uma coleção filtrado, podemos definir o filtro
+
+const newArray = tags.filter(tag => tag.note_id === 1)
