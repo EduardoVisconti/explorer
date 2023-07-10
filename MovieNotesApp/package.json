@@ -1,0 +1,17 @@
+{
+  "name": "movienotesapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": ""
+  },
+  "author": "Eduardo Visconti",
+  "license": "ISC",
+  "description": "Project developed for Rocketseat class",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.2",
+    "knex": "^2.5.0",
+    "sqlite3": "^5.1.6"
+  }
+}
