@@ -1,0 +1,44 @@
+//Pontos de Inspiração
+
+De onde vem a inspiração? Ela pode vir de qualquer lugar e serve a propósitos diversos. Nessa aula, vamos entender a inspiração que existe de três formas:
+
+Por demanda: quando você recebe uma demanda específica de um projeto e precisa de inspiração sobre COMO criar aquela solução.
+
+Para empreender: a inspiração ou ideia pode partir de uma dor ou desejo percebido no mercado. Nem sempre precisa ser algo inovador, mas também pode ser uma melhoria.
+
+Para projetos pessoais: a inspiração pode servir para melhorar coisas simples na rotina de pessoas próximas à você e também facilitar a sua vida.
+
+
+
+//Ferramentas para Inspiração
+
+Que tal conhecer duas ferramentas que podem ajudar muito na busca por inspiração e ideias de projetos?
+
+A primeira delas é o Dribbble, uma plataforma recheada de modelos que você pode procurar, relacionados aos mais diversos temas. Aqui, você também pode filtrar por tema ou tipo de mídia.
+
+A outra é o UpLabs, que também tem muitos modelos de projetos e UI para você se inspirar. O UpLabs conta com opção de download FREE em algumas publicações, para baixar o projeto original do designer e utilizar como modelo.
+
+
+
+//Dividir para conquistar!
+
+EX: 1. Receber e-mail e senha
+2. Conexão com banco de dados
+3. Criar o select beasdo no email e senha
+4. Se email e senha nao confere, retorna mensamem de erro.
+
+
+
+//MVP
+
+O Produto Mínimo Viável (Minimum Viable Product em inglês) é uma excelente estratégia para você construir e criar um projeto completo. Ele parte da premissa de que você deverá construir uma versão mais simples do seu projeto, totalmente funcional e que entregue a principal proposta de valor, no menor tempo possível, com o mínimo de esforço possível e o mínimo de custo possível.
+
+Dessa forma, você consegue validar sua ideia e aprender com seus erros e acertos para evoluir seu projeto a partir de um produto completo, ainda que simples.
+
+
+
+//Design Thinking
+
+Design Thinking é uma técnica para inovação e solução de problemas. Também conhecida como Técnica do Duplo Diamante, essa estratégia coloca a experiência do usuário no centro do projeto, partindo do sentimento do outro (empatia).
+
+O DT possui alguns passos e métodos para um processo criativo que diverge para criar muitas ideias e depois converge em uma solução para o problema. Vamos conhecê-lo?
