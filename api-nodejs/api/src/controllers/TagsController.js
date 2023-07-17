@@ -1,4 +1,4 @@
-const knex = require('../database/knex')
+const knex = require('../database/sqlite/knex')
 
 class TagsController {
   async index(request, response) {
