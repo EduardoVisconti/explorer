@@ -1,11 +1,12 @@
-const knex = require('../database/knex')
+const knex = require('../database/sqlite/knex')
 
 class NotesController {
   async create(request, response) {
     const { title, description, tags, links } = request.body //Pegando tudo da requisição do corpo
     const { user_id } = request.params //params contém o parâmetro da URL
 
-    const { note_id } = await knex('notes').insert({ //inserindo um novo registro na tabela "notes" e armazena o valor do ID desse novo registro na variável note_id. método insert é chamado passando um objeto contendo os valores para os campos title, description e user_id do novo registro.
+    const { note_id } = await knex('notes').insert({
+      //inserindo um novo registro na tabela "notes" e armazena o valor do ID desse novo registro na variável note_id. método insert é chamado passando um objeto contendo os valores para os campos title, description e user_id do novo registro.
       title,
       description,
       user_id
@@ -67,10 +68,11 @@ class NotesController {
       const filterTags = tags.split(',').map(tag => tag.trim())
 
       notes = await knex('tags')
-        .select([ //Passamos um array com quais campos queremos selecionar
+        .select([
+          //Passamos um array com quais campos queremos selecionar
           'notes.id',
           'notes.title',
-          'notes.user_id',
+          'notes.user_id'
         ])
 
         .where('notes.user_id', user_id) //Filtrando baseado no ID do usuário
@@ -85,9 +87,10 @@ class NotesController {
         .orderBy('title')
     }
 
-    const userTags = await knex('tags').where({user_id}) //Fazer um filtro em todas as tags sejam iguais ao user_id
-    const notesWithTags = notes.map(note => { //Percorrendo todas as notas
-      const noteTags = userTags.filter(tag => tag.note_id === note.id)//Filtrando as tags da nota, onde o ID da nota está vinculado com o id tag
+    const userTags = await knex('tags').where({ user_id }) //Fazer um filtro em todas as tags sejam iguais ao user_id
+    const notesWithTags = notes.map(note => {
+      //Percorrendo todas as notas
+      const noteTags = userTags.filter(tag => tag.note_id === note.id) //Filtrando as tags da nota, onde o ID da nota está vinculado com o id tag
 
       return {
         ...note,
