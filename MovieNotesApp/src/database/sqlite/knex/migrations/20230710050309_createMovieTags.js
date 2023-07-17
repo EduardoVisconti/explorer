@@ -1,10 +1,14 @@
-exports.up = knex => knex.schema.createTable('tags', table => {
-  table.increments('id')
-  table.text('name').notNullable()
+exports.up = knex =>
+  knex.schema.createTable('tags', table => {
+    table.increments('id')
+    table.text('name').notNullable()
 
-  table.integer('note_id').references('id').inTable('notes').onDelete('CASCADE') //Se eu deletar a nota, deleta as tags também
-  table.integer('user_id').references('id').inTable('users')
-
-})
+    table
+      .integer('note_id')
+      .references('id')
+      .inTable('notes')
+      .onDelete('CASCADE') //Se eu deletar a nota, deleta as tags também
+    table.integer('user_id').references('id').inTable('users')
+  })
 
 exports.down = knex => knex.schema.dropTable('tags')
