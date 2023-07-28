@@ -1,4 +1,4 @@
-# Food Explorer - Front
+# Food Explorer - Front-end
 
 This is the front-end developed by Eduardo Visconti for the Food Explorer project.
 
@@ -27,7 +27,7 @@ To access the project and test it locally, follow the instructions below:
 1. Clone the repository using the following command:
 
    ```
-   git clone https://github.com/EduardoVisconti/FoodExplore.git
+   git clone https://github.com/EduardoVisconti/FoodExplore_Front
    ```
 
 2. Access the client folder (front-end):
