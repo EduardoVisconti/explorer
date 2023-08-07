@@ -28,6 +28,8 @@ Aula 05 - Migrations para Notes
 
 npx knex migrate:latest - Rodar as "ultimas" migrations - Que acabamos automatizando colocando ele dentro do package.json > "migrate": "knex migrate:latest" e para rodar agora usamos o ' npm run migrate '
 
+npx knex migrate:rollback - Resetar
+
 -----------
 
 Aula 06 - NPM vs NPX
@@ -53,6 +55,8 @@ Aula 08 - Cardinalidade: quantidade de registros que podem estar relacionados en
 -----------
 
 Aula 09 - Migrations para Link e Tag
+
+npx knex migrate:make createMovieTags
 
 ---------
 
