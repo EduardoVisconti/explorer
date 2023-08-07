@@ -5,7 +5,7 @@ class NotesController {
     const { title, description, tags, links } = request.body //Pegando tudo da requisição do corpo
     const { user_id } = request.params //params contém o parâmetro da URL
 
-    const { note_id } = await knex('notes').insert({
+    const [note_id] = await knex('notes').insert({
       //inserindo um novo registro na tabela "notes" e armazena o valor do ID desse novo registro na variável note_id. método insert é chamado passando um objeto contendo os valores para os campos title, description e user_id do novo registro.
       title,
       description,
@@ -32,7 +32,7 @@ class NotesController {
 
     await knex('tags').insert(tagsInsert) //usando o objeto knex para inserir os objetos contidos no array tagsInsert na tabela chamada "tags"
 
-    response.json()
+    return response.json()
   }
 
   async show(request, response) {
