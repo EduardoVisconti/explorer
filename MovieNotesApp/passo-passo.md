@@ -798,7 +798,7 @@ const tagsRoutes = Router()
 
 const tagsController = new TagsController()
 
-tagsRoutes.get('/', tagsController.index)
+tagsRoutes.get('/:user_id', tagsController.index)
 
 module.exports = tagsRoutes
 
@@ -821,3 +821,7 @@ module.exports = routes
 ```
 
 17. Fazer a revisão > Parar servidor >  Apagar o banco `database.db` > Desconectar no Beekeeper
+
+Reconectar: npm run dev > conectar beekeeper > (nova aba terminal): npm run migrate
+
+No Insomnia: Criar usuário > Update no usuário > Criar tabela > Mostrar tabela > Pesquisar na tabela (index) > Tags Index 
