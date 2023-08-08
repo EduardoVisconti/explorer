@@ -69,7 +69,7 @@ class NotesController {
 
       notes = await knex('tags')
         .select([
-          //Passamos um array com quais campos queremos selecionar
+          //Passamos um array com quais campos queremos selecionar de ambas tabelas
           'notes.id',
           'notes.title',
           'notes.user_id'
@@ -83,7 +83,7 @@ class NotesController {
     } else {
       notes = await knex('notes') //Só mostrar as notas feito por esse usuário
         .where({ user_id })
-        .whereLike('title', `%${title}%`) //whereLike ajuda a buscar por valores que contenham alguma palavra > % antes e depois > dizendo que verifique antes e depois da palavra
+        .whereLike('title', `%${title}%`) //whereLike = Ajuda buscar valores que contém a palavra > Qual campo quero buscar '' > % antes e depois % = Verifique antes e depois
         .orderBy('title')
     }
 
