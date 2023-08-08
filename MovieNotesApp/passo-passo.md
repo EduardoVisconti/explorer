@@ -38,10 +38,10 @@ app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`)) //Fica 
 ```
 const { Router } = require('express')
 
-const usersRoutes = require('./users.routes') //Como importar rota**
+const usersRouter = require('./users.routes') //Como importar rota**
 
 const routes = Router()
-routes.use('/users', usersRoutes) //Como importar rota**
+routes.use('/users', usersRouter) //Como importar rota**
 
 module.exports = routes
 ```
@@ -82,10 +82,10 @@ E assim ficaria o `server.js`, `user.routes` e `index.js` (routes).
 ```index.js
 const { Router } = require('express')
 
-const usersRoutes = require('./users.routes')
+const usersRouter = require('./users.routes')
 
 const routes = Router()
-routes.use('/users', usersRoutes)
+routes.use('/users', usersRouter)
 
 module.exports = routes
 
@@ -565,9 +565,9 @@ module.exports = notesRoutes
 
 Na pasta routes > `index.js` > Importar a rota do notes
 ```
-const notesRoutes = require('./notes.routes')
+const notesRouter = require('./notes.routes')
 
-routes.use('/movie_notes', notesRoutes)
+routes.use('/movie_notes', notesRouter)
 ```
 
 CRIAR PELO INSOMNIA >
@@ -772,6 +772,52 @@ async index(request, response) {
 
 Dentro da pasta controllers > Criar `TagsController.js`
 ```
+const knex = require('../database/knex')
+
+class TagsController {
+  async index(request, response) {
+    const { user_id } = request.params
+
+    const tags = await knex('movie_tags').where({ user_id })
+  
+    return response.json(tags)
+  }
+}
+
+module.exports = TagsController
 
 ```
 
+Dentre de routes > Criar `tags.routes.js`
+```
+const { Router } = require('express')
+
+const TagsController = require('../controllers/TagsController.js')
+
+const tagsRoutes = Router()
+
+const tagsController = new TagsController()
+
+tagsRoutes.get('/', tagsController.index)
+
+module.exports = tagsRoutes
+
+```
+
+E dentro de routes > Importar a rota das Tags
+```
+const { Router } = require('express')
+
+const usersRouter = require('./users.routes')
+const notesRouter = require('./notes.routes')
+const tagsRouter = require('./tags.routes')
+
+const routes = Router()
+routes.use('/users', usersRouter)
+routes.use('/movie_notes', notesRouter)
+routes.use('/movie_tags', tagsRouter)
+
+module.exports = routes
+```
+
+17. Fazer a revisão > Parar servidor >  Apagar o banco `database.db` > Desconectar no Beekeeper
