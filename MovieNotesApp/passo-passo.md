@@ -604,7 +604,7 @@ CRIAR PELO INSOMNIA >
 }
 ```
 
-9. Exibir a nota: Dentro do Insomnia > Dentro da pasta Notes criar o Show > Método GET BASE/RESOURCE/1
+9. Exibir a nota: Dentro do Insomnia > Dentro da pasta Notes criar o request Show > Método GET BASE/RESOURCE/1
 
 No `NotesController.js` > Dentro da classe > Criar o async show
 
@@ -628,4 +628,24 @@ async show(request, response){
 notesRoutes.get('/:id', notesController.show)
 ```
 
-10. Delete >
+10. Delete > Criar request Delete no Insomnia > b/r/1
+
+No `NotesController.js` > Criar a função async delete
+
+```
+async delete(request, response) {
+  const { id } = request.params
+
+  await knex('movie_notes').where({ id }).delete()
+
+  return response.json()
+}
+```
+
+Adicionar a rota delete no `notes.routes.js` >> DELETAR NO INSOMNIA E CHECKAR NO BEEKEEPER > TAGS TB PRECISAM SER DELETADAS
+
+```
+notesRoutes.delete('/:id', notesController.delete)
+```
+
+
