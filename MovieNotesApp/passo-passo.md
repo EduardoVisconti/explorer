@@ -210,7 +210,6 @@ module.exports = UsersController
 1. Conectar com o Banco de Dados
 
 2. Criar pastas `database` > `sqlite` e dentro o `index.js`
-
 ```conexão com o banco de dados
 const sqlite3 = require('sqlite3')
 const sqlite = require('sqlite')
@@ -229,7 +228,6 @@ module.exports = sqliteConnection
 ```
 
 3. Utilizar a conexão com o banco de dados no `server.js`
-
 ```
 const database = require('./database/sqlite')
 
@@ -241,7 +239,6 @@ database()
 5. Dentro no Beekeeper > Procurar pela `database.db`
 
 6. Automatizar criação de tabelas > Dentro da pasta `sqlite` > Criar pasta `migrations` > Criar arq. `createUsers.js` e fazer CREATE TABLE
-
 ```
 const createUsers = `
   CREATE TABLE users (
@@ -259,7 +256,6 @@ module.exports = createUsers
 ```
 
 7. Dentro da `migrations` > criar `index.js`
-
 ```
 const sqliteConnection = require('../../sqlite')
 const createUsers = require('./createUsers')
@@ -278,7 +274,6 @@ module.exports = migrationsRun
 ```
 
 8. Alterar database no `server.js`
-
 ```
 const database = require('./database/sqlite')
 database()
@@ -288,9 +283,7 @@ TROCAR PARA >
 const migrationsRun = require('./database/sqlite/migrations')
 migrationsRun()
 ```
-
 9. Checkar se o email existe, alterar `UsersController.js`
-
 ```
 const AppError = require('../utils/AppError')
 
@@ -315,7 +308,6 @@ module.exports = UsersController
 ```
 
 10. Cadastrar usuário / Inserir registro > Dentro da `UsersController.js` e depois criar usuário no Insomnia e verificar o banco com o Beekeeper
-
 ```dentro da class UsersController
 await database.run(
       'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
@@ -324,13 +316,11 @@ await database.run(
 ```
 
 11. Criptografar senha > Importar hash dentro do `UsersController.js`
-
 ```npm install bcryptjs, compare para quando formos comparar a senha dps
 const { hash, compare } = require('bcryptjs')
 ```
 
 Alterar dentro da class UsersController, no async create > E DEPOIS VERIFICAR SE A SENHA ESTA CRIPTOGRAFADA E SE ME DEIXA USAR O MESMO EMAIL PARA OUTRO USUÁRIO > DELETE FROM users WHERE ID = #
-
 ```
 const hashedPassword = await hash(password, 8)
 
@@ -341,7 +331,6 @@ await database.run(
 ```
 
 12. Criar rota para att usuário (Insomnia: Update do tipo PUT) e dentro da Class UsersController, criar o async update
-
 ```
 async update(request, response) {
   const { name, email } = request.body
@@ -382,13 +371,11 @@ async update(request, response) {
 ```
 
 Depois criar uma nova rota no arq. `users.routes.js` > VERIFICAR NO INSOMNIA + BEEKEEPER SE ESTÁ FUNCIONANDO A ATT > CRIAR UM OUTRO USUÁRIO E TENTAR FAZER UMA ATT C/ O EMAIL DESTE USUÁRIO
-
 ```
 usersRoutes.put('/:id', usersController.update)
 ```
 
 13. Atualizar senha > Atualizar `UsersController.js` >> VERIFICAR A ATT DE SENHA+
-
 ```
 const { hash, compare } = require('bcryptjs')
 
@@ -449,7 +436,6 @@ async update(request, response) {
 1. Instalar Query Builder: npm install knex > npx knex init: cria o arq. `knexfile.js` e alterar > apagar comentários e deixar apenas development
 
 2. Criar uma variável para o path > Trocar o caminho do filename, deixando o path resolver e adicionar 'useNullAsDefault: true'
-
 ```
 const path = require('path')
 
@@ -467,7 +453,6 @@ module.exports = {
 ```
 
 3. Dentro de database criar pasta knex e dentro o arq. `index.js`
-
 ```
 const config = require('../../../knexfile')
 const knex = require('knex')
@@ -478,7 +463,6 @@ module.exports = connection
 ```
 
 4. Criar pasta migration dentro da pasta knex > No arq. `knexfile.js` adicionar o diretório para essa pasta migration
-
 ```
 migrations: {
   directory: path.resolve(__dirname, 'src', 'database', 'knex', 'migrations')
@@ -488,7 +472,6 @@ migrations: {
 5. As migrations do knex são gerenciadas pelo próprio knex > npx knex migrate:make createMovieNotes
 
 6. `...createMovieNotes` > Limpar e criar a tabela > NPM RUN MIGRATE
-
 ```
 exports.up = knex => knex.schema.createTable('movie_notes', table => {
   table.increments('id')
@@ -505,7 +488,6 @@ exports.down = knex => knex.schema.dropTable('movie_notes');
 ```
 
 7. Migration para Tag > npx knex migrate:make createMovieTags
-
 ```
 exports.up = knex =>
   knex.schema.createTable('movie_tags', table => {
@@ -520,7 +502,6 @@ exports.down = knex => knex.schema.dropTable('movie_tags')
 ```
 
 Alterar `knexfile.js` > Adicionar o 'pool' para que quando deletar, deletar em CASCADE
-
 ```
 pool: {
   afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb)
@@ -528,7 +509,6 @@ pool: {
 ```
 
 8. Cadastrar nota (Insomnia) > Criar environment >
-
 ```
 {
 	"RESOURCE": "movie_notes"
@@ -536,7 +516,6 @@ pool: {
 ```
 
 Dentro da pasta controllers > Criar `NotesController.js`
-
 ```
 const knex = require('../database/knex')
 
@@ -570,7 +549,6 @@ module.exports = NotesController
 ```
 
 Dentro da pasta routes > Criar `notes.routes.js` (Duplicar o do users e fazer ajustes)
-
 ```
 const { Router } = require('express')
 
@@ -586,7 +564,6 @@ module.exports = notesRoutes
 ```
 
 Na pasta routes > `index.js` > Importar a rota do notes
-
 ```
 const notesRoutes = require('./notes.routes')
 
@@ -594,7 +571,6 @@ routes.use('/movie_notes', notesRoutes)
 ```
 
 CRIAR PELO INSOMNIA >
-
 ```POST Create
 {
 	"title": "Harry Potter",
@@ -607,7 +583,6 @@ CRIAR PELO INSOMNIA >
 9. Exibir a nota: Dentro do Insomnia > Dentro da pasta Notes criar o request Show > Método GET BASE/RESOURCE/1
 
 No `NotesController.js` > Dentro da classe > Criar o async show
-
 ```
 async show(request, response){
   const { id } = request.params
@@ -623,7 +598,6 @@ async show(request, response){
 ```
 
 `notes.routes.js` Adicionar solicitação GET
-
 ```
 notesRoutes.get('/:id', notesController.show)
 ```
@@ -631,7 +605,6 @@ notesRoutes.get('/:id', notesController.show)
 10. Delete > Criar request Delete no Insomnia > b/r/1
 
 No `NotesController.js` > Criar a função async delete
-
 ```
 async delete(request, response) {
   const { id } = request.params
@@ -643,9 +616,162 @@ async delete(request, response) {
 ```
 
 Adicionar a rota delete no `notes.routes.js` >> DELETAR NO INSOMNIA E CHECKAR NO BEEKEEPER > TAGS TB PRECISAM SER DELETADAS
-
 ```
 notesRoutes.delete('/:id', notesController.delete)
 ```
 
+11. **Listar notas > Criar request Index método GET > b/r
+
+No `NotesController.js` > Criar a função async index
+```
+async index (request, response) {
+  const { user_id } = request.query //Pegando o ID de uma Query agora
+  const notes = await knex('movie_notes')
+  .where({ user_id })
+  .orderBy('title')
+
+  return response.json(notes)
+}
+```
+
+Adicionar a rota index no `notes.routes.js`
+```
+notesRoutes.get('/', notesController.index)
+//Como passamos como query não precisa de parâmetro = / 
+```
+
+Como nessa parte passamos o código como query temos que enviar pelo Insomnia > Aba Query > name = user_id > value = (id) >>> TESTAR NO INSOMNIA
+
+12. Operador, como pesquisar >
+
+No `NotesController.js` > Atualizar a função async index
+```
+async index (request, response) {
+  const { title, user_id } = request.query
+  const notes = await knex('movie_notes')
+  .where({ user_id })
+  .whereLike('title', `%${title}%`)
+  .orderBy('title')
+
+  return response.json(notes)
+}
+```
+Aba Query > name = title > value = potter >>> TESTAR NO INSOMNIA
+
+13. Aplicar filtro pelas tags
+
+No `NotesController.js` > Atualizar a função async index
+```
+async index(request, response) {
+  const { title, user_id, movie_tags } = request.query
+
+  let notes
+
+  if (movie_tags) {
+    const filterTags = movie_tags.split(',').map(tag => tag.trim())
+
+    notes = await knex('movie_tags').whereIn('name', filterTags)
+      
+  } else {
+    notes = await knex('movie_notes')
+      .where({ user_id })
+      .whereLike('title', `%${title}%`)
+      .orderBy('title')
+  }
+
+  return response.json(notes)
+}
+```
+
+Aba Query > name = movie_tags > value = fantasia >>> TESTAR NO INSOMNIA
+
+14. Conectando uma tabela com a outra
+No `NotesController.js` > Atualizar a função async index
+```
+async index(request, response) {
+  const { title, user_id, movie_tags } = request.query
+
+  let notes
+
+  if (movie_tags) {
+    const filterTags = movie_tags.split(',').map(tag => tag.trim())
+
+    notes = await knex('movie_tags')
+    .select([
+      'movie_notes.id',
+      'movie_notes.title',
+      'movie_notes.user_id',
+    ])
+    .where('movie_notes.user_id', user_id)
+    .whereLike('movie_notes.title', `%${title}%`)
+    .whereIn('name', filterTags)
+    .innerJoin('movie_notes', 'movie_notes.id', 'movie_tags.note_id')
+    .orderBy('movie_notes.title')
+
+  } else {
+    notes = await knex('movie_notes')
+      .where({ user_id })
+      .whereLike('title', `%${title}%`)
+      .orderBy('title')
+  }
+
+  return response.json(notes)
+}
+```
+
+15. **Obtendo tags da nota
+No `NotesController.js` > Atualizar a função async index
+```
+async index(request, response) {
+  const { title, user_id, movie_tags } = request.query
+
+  let notes
+
+  if (movie_tags) {
+    const filterTags = movie_tags.split(',').map(tag => tag.trim())
+
+    notes = await knex('movie_tags')
+    .select([
+      'movie_notes.id',
+      'movie_notes.title',
+      'movie_notes.user_id',
+    ])
+    .where('movie_notes.user_id', user_id)
+    .whereLike('movie_notes.title', `%${title}%`)
+    .whereIn('name', filterTags)
+    .innerJoin('movie_notes', 'movie_notes.id', 'movie_tags.note_id')
+    .orderBy('movie_notes.title')
+
+  } else {
+    notes = await knex('movie_notes')
+      .where({ user_id })
+      .whereLike('title', `%${title}%`)
+      .orderBy('title')
+  }
+
+  const userTags = await knex('movie_tags').where({ user_id })
+  const notesWithTags = notes.map(note => {
+    const noteTags = userTags.filter(tag => tag.note_id === note.id)
+
+    return {
+      ...note,
+      tags: noteTags
+    }
+  })
+
+  return response.json(notesWithTags)
+}
+```
+
+16. Listar Tags > Insomnia criar a pasta Tags > Adicionar environment > Criar Index método GET > B/R/ID
+```
+{
+	"RESOURCE": "movie_tags"
+}
+```
+
+Dentro da pasta controllers > Criar `TagsController.js`
+```
+
+```
 
