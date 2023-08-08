@@ -1,3 +1,4 @@
+const { response } = require('express')
 const knex = require('../database/knex')
 
 class NotesController {
@@ -25,7 +26,7 @@ class NotesController {
     return response.json()
   }
 
-  async show(request, response){
+  async show(request, response) {
     const { id } = request.params
 
     const note = await knex('movie_notes').where({ id }).first()
@@ -35,6 +36,14 @@ class NotesController {
       ...note,
       tags
     })
+  }
+
+  async delete(request, response) {
+    const { id } = request.params
+
+    await knex('movie_notes').where({ id }).delete()
+
+    return response.json()
   }
 }
 
