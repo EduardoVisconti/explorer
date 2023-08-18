@@ -1,74 +1,100 @@
-# Food Explorer - API
+```markdown
+<h1 align="center">Food Explorer - Explore the Culinary World</h1>
 
-This is the back-end (API) developed by Eduardo Visconti for the Food Explorer project.
+<p align="center">
+  Welcome to the Food Explorer project! This is the final challenge of the Explorer course where I created both the FrontEnd and BackEnd of the application.
+</p>
 
-The front-end layout was created by RocketSeat.
+---
 
-## Technologies Used
+## About the Project
 
+Food Explorer is a web application for a restaurant. After registering on the platform, users can create orders and track their status. The application includes profile customization, favorite filtering, search functionality, and a contact section with the restaurant. The shopping cart is fully functional, and users can choose between two payment methods (credit card or Pix). The Administrator has the capability to create/edit/remove dishes as desired. They can also update the status of orders based on their preparation stage in the kitchen. The status changes are immediately reflected on the consumer's screen. The project also includes various "extras" such as theme switching, user profile customization (avatar, name, and password), and several visual effects. Most importantly, it is fully responsive for use on different types of devices!
+
+This repository contains the Frontend and Backend data for my React.js and Node.js application.
+
+---
+
+## Technologies
+
+The following technologies were used in the development of this project:
+
+- ReactJs
 - Node.js
-- SQLite
 - JavaScript
-- Git and Github
+- Vite
+- Express
+- Nodemon
+- SQLite
+- Knex
+- BCryptjs
+- JSON Web Token
+- Multer
+- CORS
+- Axios
+- Styled Components
+- React Icons
+- Swiper
+- React Router Dom
 
-## Project Description
+---
 
-Food Explorer is a digital menu for a fictional restaurant. Developed end-to-end with front-end and back-end, the project simulates a complete restaurant based on the layout provided in Figma, which includes the visualization of dishes, details, and even the payment process.
+## How to Use
 
-The system is divided into two personas: the admin and the user. The admin, responsible for the restaurant, has access to functionalities for creating, viewing, editing, and deleting dishes. Each dish includes an image, name, category, description, ingredients, and price. The admin receives a success message when adding a new dish.
+Clone the project to your desired location on your computer.
 
-The user has access to view all registered dishes, and when clicking on a dish, they are redirected to a new screen with detailed information about the dish.
+```bash
+$ git clone git@github.com:EduardoVisconti/FoodExplore_Front.git
+$ git clone git@github.com:EduardoVisconti/FoodExplore_API.git
+```
 
-## Clone and Access the Project
+---
 
-To access the project and test it locally, follow the instructions below:
+#### Running the Backend
 
-1. Clone the repository using the following command:
+```bash
+# In the Backend, add a port and a secret to the empty .env file
+  AUTH_SECRET=
+  PORT=
 
-   ```
-   git clone https://github.com/EduardoVisconti/FoodExplore.git
-   ```
+# Navigate to the Backend directory
+$ cd food-explorer-backend
 
-2. Access the client folder (front-end):
+# Install the necessary dependencies
+$ npm install
 
-   ```
-   cd FoodExplore_Front/
-   ```
+# Now start the Backend server
+$ npm run dev
+```
 
-3. Install the project dependencies:
+---
 
-   ```
-   npm install
-   ```
+#### Running the Frontend
 
-4. Run the application:
+```bash
+# Navigate to the Frontend directory
+$ cd food-explorer-frontend
 
-   ```
-   npm run dev
-   ```
+# Install the necessary dependencies
+$ npm install
 
-5. To access the front-end, open a browser and visit the following address:
+# Now start the Frontend server
+$ npm run dev
 
-   [http://localhost:5173/](http://localhost:5173/)
+# The terminal will display the local address where the application is running. Simply enter the same address in your preferred browser. The address used in the project creation was this:
 
-6. Use the following credentials to log in:
+  http://localhost:5173/
+```
 
-   **User:**
+#### User / Admin Login
+
+**User:**
 
    - Login: client
    - Password: 1234
 
-   **Admin:**
+**Admin:**
 
    - Login: adm
    - Password: 123
-
-## Layout
-
-The front-end layout of the project was designed by RocketSeat and is available on Figma. To view the complete layout of the application, visit the following link:
-
-[https://www.figma.com/community/file/1196874589259687769](https://www.figma.com/community/file/1196874589259687769)
-
-## License
-
-This project is licensed under the MIT License.
+```
