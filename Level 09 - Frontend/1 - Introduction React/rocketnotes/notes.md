@@ -1,0 +1,1 @@
+1. Criar com o terminal > cd 'pasta' > npm create vite@latest > cd 'nome da pasta criada' > npm install
